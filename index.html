@@ -646,12 +646,13 @@ function removeFromCart(artworkNumber) {
 
 function getArtworkImage(artworkNumber) {
   const imageMap = {
-    1: 'IMG_0471.JPG', 2: 'IMG_0472.JPG', 3: 'IMG_0474.JPG', 4: 'IMG_0476.JPG', 5: 'IMG_0477.JPG',
-    6: 'IMG_0479.JPG', 7: 'IMG_0481.JPG', 8: 'IMG_0482.JPG', 9: 'IMG_0485.JPG', 10: 'IMG_0486.JPG',
-    11: 'photo_2025-09-19_01-14-34.jpg', 12: 'photo_2025-10-02_19-04-36.jpg', 13: 'photo_2025-10-02_19-04-44.jpg',
-    14: 'photo_2025-10-02_19-04-51.jpg', 15: 'photo_2025-10-02_19-05-39.jpg', 16: 'photo_2025-10-02_19-06-08.jpg'
-  };
-  return imageMap[artworkNumber] || 'IMG_0471.JPG';
+  1: '1.jpg', 2: '2.jpg', 3: '3.jpg', 4: '4.jpg', 5: '5.jpg',
+  6: '6.jpg', 7: '7.jpg', 8: '8.jpg', 9: '9.jpg', 10: '10.jpg',
+  11: '11.jpg', 12: '12.jpg', 13: '13.jpg', 14: '14.jpg', 15: '15.jpg',
+  16: '16.jpg'
+};
+
+  return imageMap[artworkNumber] || '1.JPG';
 }
 
 function submitOrder() {
@@ -795,3 +796,4 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 </script>
 </body>
 </html>
+
