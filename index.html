@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Fereshteh Shahani Gallery - Realistic artwork with pen and pencil" />
-  <title>Fereshteh Shahani Gallery | Realistic Art</title>
-  <meta property="og:title" content="Fereshteh Shahani Gallery – Realistic Art" />
-  <meta property="og:description" content="Pen & pencil art by Fereshteh Shahani. Gallery & contact." />
+  <meta name="description" content="Feresteh Shahani Gallery - Realistic artwork with pen and pencil" />
+  <title>Feresteh Shahani Gallery | Realistic Art</title>
+  <meta property="og:title" content="Feresteh Shahani Gallery – Realistic Art" />
+  <meta property="og:description" content="Pen & pencil art by Feresteh Shahani. Gallery & contact." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#1a1a1a" />
   <style>
@@ -18,51 +18,24 @@
 
     body {
       font-family: 'Georgia', serif;
-      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
       color: #f0f0f0;
       line-height: 1.6;
       min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
     }
 
     .language-selector {
       position: relative;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(212, 175, 55, 0.3);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      overflow: hidden;
-    }
-
-    .language-selector::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .language-selector:hover::before {
-      opacity: 1;
+      transition: all 0.3s ease;
     }
 
     .language-selector:hover {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.15);
       border-color: rgba(212, 175, 55, 0.5);
-      transform: translateY(-2px);
     }
 
     .language-selector select {
@@ -75,14 +48,11 @@
       font-weight: 500;
       font-family: 'Georgia', serif;
       width: 100%;
-      position: relative;
-      z-index: 1;
     }
 
     .language-selector select:focus {
       outline: 2px solid #d4af37;
-      outline-offset: 2px;
-      border-radius: 12px;
+      border-radius: 8px;
     }
 
     .language-selector select option {
@@ -92,15 +62,14 @@
     }
 
     header {
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.9);
       padding: 15px 0;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.1);
     }
 
     nav {
@@ -110,8 +79,6 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 20px;
-      position: relative;
-      z-index: 1;
     }
 
     .logo {
@@ -120,14 +87,11 @@
       color: #d4af37;
       text-transform: uppercase;
       letter-spacing: 2px;
-      transition: all 0.3s ease;
-      text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+      transition: color 0.3s ease;
     }
 
     .logo:hover {
       color: #f0c748;
-      text-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
-      transform: scale(1.05);
     }
 
     .nav-links {
@@ -143,7 +107,7 @@
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       position: relative;
       white-space: nowrap;
       padding: 8px 0;
@@ -156,14 +120,13 @@
       left: 50%;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, transparent, #d4af37, transparent);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: #d4af37;
+      transition: all 0.3s ease;
       transform: translateX(-50%);
     }
 
     .nav-links a:hover {
       color: #d4af37;
-      transform: translateY(-2px);
     }
 
     .nav-links a:hover::after {
@@ -178,30 +141,18 @@
       min-width: 140px;
     }
 
+    /* Page Container */
     .page-container {
       display: none;
       min-height: 100vh;
       padding-top: 80px;
-      position: relative;
-      z-index: 1;
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .page-container.active {
       display: block;
     }
 
+    /* Home Page */
     .home-page {
       height: 100vh;
       display: flex;
@@ -209,42 +160,20 @@
       justify-content: center;
       text-align: center;
       padding: 0 20px;
-      background: radial-gradient(circle at center, rgba(45, 45, 45, 0.3) 0%, transparent 70%);
+      background: radial-gradient(circle at center, #2d2d2d 0%, #1a1a1a 100%);
     }
 
     .home-content {
       max-width: 800px;
-      animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .home-content h1 {
       font-size: 4rem;
       margin-bottom: 2rem;
       color: #d4af37;
-      text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
       font-weight: 300;
-      letter-spacing: 4px;
-      animation: glow 3s ease-in-out infinite;
-    }
-
-    @keyframes glow {
-      0%, 100% {
-        text-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
-      }
-      50% {
-        text-shadow: 0 4px 30px rgba(212, 175, 55, 0.6);
-      }
+      letter-spacing: 3px;
     }
 
     .home-content p {
@@ -272,43 +201,25 @@
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 2px;
-      border-radius: 12px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 8px;
+      transition: all 0.4s ease;
       border: none;
       cursor: pointer;
       font-size: 1rem;
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .page-button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .page-button:hover::before {
-      opacity: 1;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     }
 
     .page-button:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
       background: linear-gradient(135deg, #f0c748 0%, #ffd700 100%);
     }
 
-    .page-button:active {
-      transform: translateY(-2px);
-    }
-
+    /* Gallery Page */
     .gallery-page {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 0 20px;
     }
 
     .section-title {
@@ -319,8 +230,6 @@
       position: relative;
       padding-bottom: 1.5rem;
       font-weight: 300;
-      letter-spacing: 2px;
-      animation: slideUp 0.8s ease;
     }
 
     .section-title::after {
@@ -332,16 +241,6 @@
       width: 100px;
       height: 3px;
       background: linear-gradient(90deg, transparent, #d4af37, transparent);
-      animation: expandWidth 1s ease 0.3s backwards;
-    }
-
-    @keyframes expandWidth {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100px;
-      }
     }
 
     .gallery {
@@ -354,61 +253,17 @@
     .gallery-item {
       position: relative;
       overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      background: rgba(255, 255, 255, 0.03);
-      cursor: zoom-in;
-      border: 1px solid rgba(212, 175, 55, 0.15);
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      transition: all 0.4s ease;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.2);
       aspect-ratio: 4 / 5;
-      animation: fadeInUp 0.6s ease backwards;
-    }
-
-    .gallery-item:nth-child(1) { animation-delay: 0.1s; }
-    .gallery-item:nth-child(2) { animation-delay: 0.15s; }
-    .gallery-item:nth-child(3) { animation-delay: 0.2s; }
-    .gallery-item:nth-child(4) { animation-delay: 0.25s; }
-    .gallery-item:nth-child(5) { animation-delay: 0.3s; }
-    .gallery-item:nth-child(6) { animation-delay: 0.35s; }
-    .gallery-item:nth-child(7) { animation-delay: 0.4s; }
-    .gallery-item:nth-child(8) { animation-delay: 0.45s; }
-    .gallery-item:nth-child(9) { animation-delay: 0.5s; }
-    .gallery-item:nth-child(10) { animation-delay: 0.55s; }
-    .gallery-item:nth-child(11) { animation-delay: 0.6s; }
-    .gallery-item:nth-child(12) { animation-delay: 0.65s; }
-    .gallery-item:nth-child(13) { animation-delay: 0.7s; }
-    .gallery-item:nth-child(14) { animation-delay: 0.75s; }
-    .gallery-item:nth-child(15) { animation-delay: 0.8s; }
-    .gallery-item:nth-child(16) { animation-delay: 0.85s; }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .gallery-item::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      z-index: 1;
-    }
-
-    .gallery-item:hover::before {
-      opacity: 1;
     }
 
     .gallery-item:hover {
-      transform: translateY(-15px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
       border-color: rgba(212, 175, 55, 0.4);
     }
 
@@ -418,11 +273,11 @@
       object-fit: cover;
       object-position: center;
       display: block;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.6s ease;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.1);
+      transform: scale(1.08);
     }
 
     .gallery-overlay {
@@ -437,33 +292,75 @@
       font-size: 0.9rem;
       backdrop-filter: blur(10px);
       pointer-events: none;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      z-index: 2;
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    .gallery-item:hover .gallery-overlay {
+    /* Action buttons */
+    .gallery-actions {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .action-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .select-btn {
+      background: linear-gradient(135deg, #d4af37 0%, #f0c748 100%);
+      color: #1a1a1a;
+    }
+
+    .select-btn:hover {
       transform: scale(1.1);
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+      background: linear-gradient(135deg, #f0c748 0%, #ffd700 100%);
+    }
+
+    .select-btn.selected {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .zoom-btn {
+      background: rgba(255, 255, 255, 0.9);
+      color: #1a1a1a;
+    }
+
+    .zoom-btn:hover {
+      transform: scale(1.1);
+      background: white;
     }
 
     .purchase-info {
       background: rgba(255, 255, 255, 0.05);
       padding: 3rem;
-      border-radius: 16px;
+      border-radius: 15px;
       max-width: 900px;
       margin: 4rem auto 0;
       border: 1px solid rgba(212, 175, 55, 0.2);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s ease;
       backdrop-filter: blur(10px);
       text-align: center;
-      animation: fadeInUp 0.8s ease 0.4s backwards;
     }
 
     .purchase-info:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
       border-color: rgba(212, 175, 55, 0.4);
     }
 
@@ -480,35 +377,35 @@
       font-weight: 600;
     }
 
+    /* About & Contact Page */
     .about-contact-page {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 0 20px;
     }
 
     .about-content {
       background: rgba(255, 255, 255, 0.05);
       padding: 3rem;
-      border-radius: 16px;
+      border-radius: 15px;
       max-width: 800px;
       margin: 0 auto 4rem;
       border: 1px solid rgba(212, 175, 55, 0.2);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s ease;
       backdrop-filter: blur(10px);
-      animation: fadeInUp 0.8s ease 0.2s backwards;
     }
 
     .about-content:hover {
-      transform: translateY(-12px);
+      transform: translateY(-10px);
       background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 25px 50px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
       border-color: rgba(212, 175, 55, 0.4);
     }
 
     .about-content p {
       color: #e0e0e0;
       font-size: 1.2rem;
-      line-height: 1.9;
+      line-height: 1.8;
       text-align: center;
       font-weight: 300;
     }
@@ -516,27 +413,26 @@
     .contact-content {
       background: rgba(255, 255, 255, 0.05);
       padding: 3rem;
-      border-radius: 16px;
+      border-radius: 15px;
       max-width: 800px;
       margin: 0 auto;
       border: 1px solid rgba(212, 175, 55, 0.2);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s ease;
       backdrop-filter: blur(10px);
       text-align: center;
-      animation: fadeInUp 0.8s ease 0.4s backwards;
     }
 
     .contact-content:hover {
-      transform: translateY(-12px);
+      transform: translateY(-10px);
       background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 25px 50px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
       border-color: rgba(212, 175, 55, 0.4);
     }
 
     .contact-content p {
       color: #e0e0e0;
       font-size: 1.2rem;
-      line-height: 1.9;
+      line-height: 1.8;
       margin-bottom: 2rem;
       font-weight: 300;
     }
@@ -557,39 +453,20 @@
       color: #1a1a1a !important;
       text-decoration: none;
       padding: 14px 30px;
-      border-radius: 12px;
+      border-radius: 8px;
       font-weight: bold;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       border: 2px solid transparent;
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
       font-size: 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .social-button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .social-button:hover::before {
-      opacity: 1;
     }
 
     .social-button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
       background: linear-gradient(135deg, #f0c748 0%, #ffd700 100%);
       color: #1a1a1a !important;
       border-color: #d4af37;
-    }
-
-    .social-button i {
-      font-size: 1.2rem;
     }
 
     .email-button {
@@ -597,49 +474,267 @@
       background: linear-gradient(135deg, #d4af37 0%, #f0c748 100%);
       color: #1a1a1a !important;
       text-decoration: none;
-      padding: 16px 40px;
-      border-radius: 12px;
+      padding: 15px 40px;
+      border-radius: 8px;
       font-weight: bold;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       border: 2px solid transparent;
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
       font-size: 1.1rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .email-button::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .email-button:hover::before {
-      opacity: 1;
     }
 
     .email-button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
       background: linear-gradient(135deg, #f0c748 0%, #ffd700 100%);
       color: #1a1a1a !important;
       border-color: #d4af37;
     }
 
+    /* NEW PURCHASE PAGE STYLES - Matching original design */
+    .purchase-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .cart-items {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .cart-item:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .cart-item-image {
+      width: 120px;
+      height: 150px;
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .cart-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cart-item-details {
+      flex: 1;
+    }
+
+    .cart-item-number {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #d4af37;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-item-remove {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f0f0f0;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cart-item-remove:hover {
+      background: rgba(255, 0, 0, 0.2);
+      border-color: rgba(255, 0, 0, 0.5);
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #c0c0c0;
+    }
+
+    .empty-cart p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .order-form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3rem;
+      border-radius: 15px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .order-form:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+
+    .form-group {
+      margin-bottom: 2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #d4af37;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: #f0f0f0;
+      font-family: 'Georgia', serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #d4af37;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .selected-artworks {
+      background: rgba(212, 175, 55, 0.1);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .selected-artworks h4 {
+      color: #d4af37;
+      margin-bottom: 1rem;
+    }
+
+    .artwork-numbers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .artwork-number {
+      background: #d4af37;
+      color: #1a1a1a;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .submit-button {
+      background: linear-gradient(135deg, #d4af37 0%, #f0c748 100%);
+      color: #1a1a1a;
+      border: none;
+      padding: 1.2rem 3rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+    }
+
+    .success-message {
+      text-align: center;
+      padding: 3rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .success-message h3 {
+      color: #d4af37;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .success-message p {
+      color: #e0e0e0;
+      margin-bottom: 2rem;
+    }
+
+    /* Gallery item selection */
+    .gallery-item.selected {
+      border: 3px solid #d4af37;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    }
+
+    .cart-indicator {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .cart-indicator:hover {
+      background: rgba(212, 175, 55, 0.2);
+      border-color: rgba(212, 175, 55, 0.5);
+    }
+
+    .cart-count {
+      background: #d4af37;
+      color: #1a1a1a;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    /* Lightbox */
     .lightbox {
       position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.96);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 2000;
-      padding: 1rem;
-      touch-action: none;
-      backdrop-filter: blur(10px);
+      padding: 20px;
     }
 
     .lightbox.open {
@@ -647,54 +742,53 @@
       animation: fadeIn 0.3s ease;
     }
 
-    #lbStage {
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lightbox-content {
       position: relative;
-      max-width: 90vw;
-      max-height: 90vh;
+      max-width: 90%;
+      max-height: 90%;
       display: flex;
       align-items: center;
       justify-content: center;
-      transform: translate3d(0,0,0) scale(1);
-      will-change: transform;
-      cursor: grab;
-      touch-action: none;
     }
 
-    #lbStage:active {
-      cursor: grabbing;
-    }
-
-    #lbImg {
+    .lightbox-img {
       max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.9);
-      user-select: none;
-      -webkit-user-drag: none;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .lightbox .close-btn {
       position: absolute;
       top: 20px;
       right: 20px;
-      background: rgba(212, 175, 55, 0.15);
+      background: rgba(212, 175, 55, 0.2);
       border: 2px solid rgba(212, 175, 55, 0.6);
       color: #d4af37;
-      font-size: 1.1rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 50px;
+      font-size: 1.5rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       font-weight: bold;
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2001;
     }
 
     .lightbox .close-btn:hover {
-      background: rgba(212, 175, 55, 0.25);
+      background: rgba(212, 175, 55, 0.3);
       border-color: #d4af37;
-      transform: scale(1.1) rotate(90deg);
+      transform: scale(1.1);
     }
 
     .lightbox .counter {
@@ -704,17 +798,19 @@
       transform: translateX(-50%);
       color: #d4af37;
       font-size: 1.1rem;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 0.8rem 1.8rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 0.7rem 1.5rem;
       border-radius: 50px;
-      backdrop-filter: blur(15px);
+      backdrop-filter: blur(10px);
       font-weight: 600;
-      border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     .lightbox .nav {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -723,38 +819,39 @@
 
     .lightbox .nav button {
       pointer-events: auto;
-      background: rgba(212, 175, 55, 0.15);
+      background: rgba(212, 175, 55, 0.2);
       border: 2px solid rgba(212, 175, 55, 0.5);
       color: #d4af37;
-      font-size: 1.5rem;
-      padding: 1rem 1.3rem;
+      font-size: 2rem;
+      width: 60px;
+      height: 60px;
       margin: 0 1rem;
-      border-radius: 12px;
+      border-radius: 50%;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
       font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .lightbox .nav button:hover {
-      background: rgba(212, 175, 55, 0.25);
+      background: rgba(212, 175, 55, 0.3);
       border-color: #d4af37;
-      transform: scale(1.15);
-    }
-
-    .lightbox .nav button:active {
-      transform: scale(0.95);
+      transform: scale(1.1);
     }
 
     body.lb-lock {
       overflow: hidden;
     }
 
+    /* Mobile Menu */
     .menu-toggle {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      gap: 5px;
+      gap: 4px;
       padding: 5px;
     }
 
@@ -762,21 +859,20 @@
       width: 25px;
       height: 3px;
       background: #d4af37;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: 0.3s;
       border-radius: 2px;
     }
 
     .menu-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(7px, 7px);
+      transform: rotate(45deg) translate(6px, 6px);
     }
 
     .menu-toggle.active span:nth-child(2) {
       opacity: 0;
-      transform: translateX(-10px);
     }
 
     .menu-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
+      transform: rotate(-45deg) translate(6px, -6px);
     }
 
     @media (max-width: 768px) {
@@ -796,7 +892,7 @@
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.4s ease;
         backdrop-filter: blur(20px);
         border-bottom: 1px solid rgba(212, 175, 55, 0.2);
       }
@@ -818,7 +914,6 @@
 
       .home-content h1 {
         font-size: 2.5rem;
-        letter-spacing: 2px;
       }
 
       .home-content p {
@@ -868,14 +963,16 @@
       }
 
       .lightbox .nav button {
-        font-size: 1.3rem;
-        padding: 0.8rem 1rem;
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
         margin: 0 0.5rem;
       }
 
       .lightbox .close-btn {
-        font-size: 1rem;
-        padding: 0.5rem 0.9rem;
+        font-size: 1.2rem;
+        width: 40px;
+        height: 40px;
         top: 15px;
         right: 15px;
       }
@@ -890,15 +987,30 @@
         font-size: 1rem;
       }
 
-      .social-links {
+      .cart-item {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+        gap: 1rem;
       }
 
-      .social-button {
+      .cart-item-image {
         width: 100%;
-        max-width: 300px;
-        justify-content: center;
+        height: 200px;
+      }
+
+      .order-form {
+        padding: 2rem;
+      }
+
+      .cart-indicator {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+      }
+
+      .action-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
       }
     }
 
@@ -909,8 +1021,9 @@
       }
     }
 
+    /* Scrollbar Styling */
     ::-webkit-scrollbar {
-      width: 10px;
+      width: 8px;
     }
 
     ::-webkit-scrollbar-track {
@@ -918,20 +1031,19 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #d4af37, #f0c748);
-      border-radius: 5px;
+      background: #d4af37;
+      border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(180deg, #f0c748, #ffd700);
+      background: #f0c748;
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo" id="logoText">Fereshteh Shahani Gallery</div>
+      <div class="logo" id="logoText">Feresteh Shahani Gallery</div>
       
       <div class="menu-toggle" id="menuToggle">
         <span></span>
@@ -942,6 +1054,12 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#" id="navHome" onclick="showPage('home')">Home</a></li>
         <li><a href="#" id="navGallery" onclick="showPage('gallery')">Gallery</a></li>
+        <li><a href="#" id="navPurchase" onclick="showPage('purchase')">
+          <div class="cart-indicator">
+            <span>🛒</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
+        </a></li>
         <li><a href="#" id="navAbout" onclick="showPage('about-contact')">About Me</a></li>
         <li class="language-item">
           <div class="language-selector">
@@ -956,10 +1074,11 @@
     </nav>
   </header>
 
+  <!-- Home Page -->
   <div id="home-page" class="page-container active">
     <section class="home-page">
       <div class="home-content">
-        <h1 id="heroTitle">Fereshteh Shahani Gallery</h1>
+        <h1 id="heroTitle">Feresteh Shahani Gallery</h1>
         <p id="heroSubtitle">Realistic Artwork with Pen & Pencil ✏️</p>
         <div class="home-buttons">
           <button class="page-button" onclick="showPage('gallery')">View Gallery</button>
@@ -969,43 +1088,210 @@
     </section>
   </div>
 
+  <!-- Gallery Page -->
   <div id="gallery-page" class="page-container">
     <section class="gallery-page">
       <h2 class="section-title" id="galleryTitle">My Artworks</h2>
       <div class="gallery" id="galleryGrid">
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="1.JPG" alt="Realistic portrait drawing with pen"><div class="gallery-overlay"><span>1</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="2.JPG" alt="Detailed pencil drawing of a face"><div class="gallery-overlay"><span>2</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="3.JPG" alt="Pen art with shading techniques"><div class="gallery-overlay"><span>3</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="4.JPG" alt="Realistic eye drawing with pencil"><div class="gallery-overlay"><span>4</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="5.JPG" alt="Portrait art with pen technique"><div class="gallery-overlay"><span>5</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="6.JPG" alt="Detailed face study with pen"><div class="gallery-overlay"><span>6</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="7.JPG" alt="Artwork with shading techniques"><div class="gallery-overlay"><span>7</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="8.JPG" alt="Realistic drawing with precision"><div class="gallery-overlay"><span>8</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="9.JPG" alt="Pencil portrait with details"><div class="gallery-overlay"><span>9</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="10.JPG" alt="Pen artwork in profile"><div class="gallery-overlay"><span>10</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="11.jpg" alt="Realistic hand drawing with pen"><div class="gallery-overlay"><span>11</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="12.jpg" alt="Detailed portrait study"><div class="gallery-overlay"><span>12</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="13.jpg" alt="Pen art with depth"><div class="gallery-overlay"><span>13</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="14.jpg" alt="Pencil drawing with texture"><div class="gallery-overlay"><span>14</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="15.jpg" alt="Realistic facial expressions"><div class="gallery-overlay"><span>15</span></div></div>
-        <div class="gallery-item"><img loading="lazy" decoding="async" src="16.jpg" alt="Artwork with light and shadow"><div class="gallery-overlay"><span>16</span></div></div>
+        <!-- Gallery items with separate zoom and selection buttons -->
+        <div class="gallery-item" data-artwork="1">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(1, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(1)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0471.JPG" alt="Realistic portrait drawing with pen">
+          <div class="gallery-overlay"><span>1</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="2">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(2, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(2)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0472.JPG" alt="Detailed pencil drawing of a face">
+          <div class="gallery-overlay"><span>2</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="3">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(3, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(3)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0474.JPG" alt="Pen art with shading techniques">
+          <div class="gallery-overlay"><span>3</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="4">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(4, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(4)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0476.JPG" alt="Realistic eye drawing with pencil">
+          <div class="gallery-overlay"><span>4</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="5">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(5, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(5)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0477.JPG" alt="Portrait art with pen technique">
+          <div class="gallery-overlay"><span>5</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="6">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(6, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(6)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0479.JPG" alt="Detailed face study with pen">
+          <div class="gallery-overlay"><span>6</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="7">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(7, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(7)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0481.JPG" alt="Artwork with shading techniques">
+          <div class="gallery-overlay"><span>7</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="8">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(8, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(8)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0482.JPG" alt="Realistic drawing with precision">
+          <div class="gallery-overlay"><span>8</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="9">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(9, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(9)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0485.JPG" alt="Pencil portrait with details">
+          <div class="gallery-overlay"><span>9</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="10">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(10, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(10)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="IMG_0486.JPG" alt="Pen artwork in profile">
+          <div class="gallery-overlay"><span>10</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="11">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(11, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(11)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="photo_2025-09-19_01-14-34.jpg" alt="Realistic hand drawing with pen">
+          <div class="gallery-overlay"><span>11</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="12">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(12, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(12)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="photo_2025-10-02_19-04-36.jpg" alt="Detailed portrait study">
+          <div class="gallery-overlay"><span>12</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="13">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(13, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(13)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="photo_2025-10-02_19-04-44.jpg" alt="Pen art with depth">
+          <div class="gallery-overlay"><span>13</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="14">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(14, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(14)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="photo_2025-10-02_19-04-51.jpg" alt="Pencil drawing with texture">
+          <div class="gallery-overlay"><span>14</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="15">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(15, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(15)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="photo_2025-10-02_19-05-39.jpg" alt="Realistic facial expressions">
+          <div class="gallery-overlay"><span>15</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="16">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(16, this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(16)">🔍</button>
+          </div>
+          <img loading="lazy" decoding="async" src="photo_2025-10-02_19-06-08.jpg" alt="Artwork with light and shadow">
+          <div class="gallery-overlay"><span>16</span></div>
+        </div>
       </div>
 
       <div class="purchase-info">
         <p id="purchaseText">
           <strong id="purchaseStrong">Interested in purchasing an artwork?</strong><br />
-          <span id="purchaseDescription">Contact me directly to discuss availability, pricing, and commission opportunities.</span>
+          <span id="purchaseDescription">Use the + button to select artworks, then proceed to purchase to send your inquiry.</span>
         </p>
       </div>
     </section>
   </div>
 
+  <!-- NEW PURCHASE PAGE -->
+  <div id="purchase-page" class="page-container">
+    <section class="purchase-page">
+      <h2 class="section-title" id="purchaseTitle">Purchase Artworks</h2>
+      
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+
+      <div class="order-form" id="orderForm">
+        <h3 style="color: #d4af37; margin-bottom: 2rem; text-align: center;">Order Inquiry Form</h3>
+        
+        <div class="form-group">
+          <label for="firstName" id="firstNameLabel">First Name *</label>
+          <input type="text" id="firstName" required placeholder="Enter your first name">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName" id="lastNameLabel">Last Name *</label>
+          <input type="text" id="lastName" required placeholder="Enter your last name">
+        </div>
+
+        <div class="form-group">
+          <label for="email" id="emailLabel">Email Address *</label>
+          <input type="email" id="email" required placeholder="Enter your email address">
+        </div>
+
+        <div class="form-group">
+          <label for="message" id="messageLabel">Additional Message</label>
+          <textarea id="message" rows="4" placeholder="Any additional information or questions..."></textarea>
+        </div>
+
+        <div class="selected-artworks">
+          <h4>Selected Artworks:</h4>
+          <div class="artwork-numbers" id="selectedArtworksList">
+            <!-- Selected artworks will be shown here -->
+          </div>
+        </div>
+
+        <button class="submit-button" onclick="submitOrder()" id="submitButton">
+          Send Purchase Inquiry
+        </button>
+      </div>
+
+      <div class="success-message" id="successMessage" style="display: none;">
+        <h3>Thank You for Your Interest!</h3>
+        <p>Your purchase inquiry has been sent to Feresteh. You will receive a confirmation email shortly.</p>
+        <button class="page-button" onclick="showPage('home')">Return to Home</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- About & Contact Page -->
   <div id="about-contact-page" class="page-container">
     <section class="about-contact-page">
       <h2 class="section-title" id="aboutTitle">About Me</h2>
       <div class="about-content">
         <p id="aboutText">
-          Welcome to my gallery! I am Fereshteh Shahani and I create realistic artworks with pen and pencil. 
+          Welcome to my gallery! I am Feresteh Shahani and I create realistic artworks with pen and pencil. 
           Each piece is created with patience, precision and passion for detail. I find my inspiration 
           in the beauty of everyday life and the complexity of human expression.
         </p>
@@ -1021,57 +1307,150 @@
         
         <div class="social-links">
           <a href="https://facebook.com/Fereshtehshahani" target="_blank" class="social-button">
-            <i class="fab fa-facebook-f"></i>
-            <span>Follow on Facebook</span>
+            <span>Facebook</span>
+          </a>
+          <a href="https://instagram.com/ferestehshahani" target="_blank" class="social-button">
+            <span>Instagram @ferestehshahani</span>
           </a>
         </div>
       </div>
     </section>
   </div>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image enlarged view">
-    <button class="close-btn" id="lbClose" aria-label="Close (Esc)">✕</button>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="close-btn" id="lbClose">✕</button>
     <div class="nav">
-      <button id="lbPrev" aria-label="Previous (←)">←</button>
-      <button id="lbNext" aria-label="Next (→)">→</button>
+      <button id="lbPrev">←</button>
+      <button id="lbNext">→</button>
     </div>
-    <div id="lbStage"><img id="lbImg" src="" alt="Large image" /></div>
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lbImg" src="" alt="Large image view">
+    </div>
     <div class="counter" id="lbCounter">1 / 16</div>
   </div>
 
   <script>
+    // Shopping Cart Functionality
+    let selectedArtworks = new Set();
+
+    // Lightbox functionality
+    let currentImageIndex = 0;
+    const totalImages = 16;
+
+    function openLightbox(imageIndex) {
+      currentImageIndex = imageIndex;
+      updateLightboxImage();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.classList.add('lb-lock');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.classList.remove('lb-lock');
+    }
+
+    function updateLightboxImage() {
+      const imageMap = {
+        1: 'IMG_0471.JPG', 2: 'IMG_0472.JPG', 3: 'IMG_0474.JPG', 4: 'IMG_0476.JPG', 5: 'IMG_0477.JPG',
+        6: 'IMG_0479.JPG', 7: 'IMG_0481.JPG', 8: 'IMG_0482.JPG', 9: 'IMG_0485.JPG', 10: 'IMG_0486.JPG',
+        11: 'photo_2025-09-19_01-14-34.jpg', 12: 'photo_2025-10-02_19-04-36.jpg', 13: 'photo_2025-10-02_19-04-44.jpg',
+        14: 'photo_2025-10-02_19-04-51.jpg', 15: 'photo_2025-10-02_19-05-39.jpg', 16: 'photo_2025-10-02_19-06-08.jpg'
+      };
+      
+      const imageSrc = imageMap[currentImageIndex] || 'IMG_0471.JPG';
+      document.getElementById('lbImg').src = imageSrc;
+      document.getElementById('lbCounter').textContent = `${currentImageIndex} / ${totalImages}`;
+    }
+
+    function nextImage() {
+      currentImageIndex = currentImageIndex >= totalImages ? 1 : currentImageIndex + 1;
+      updateLightboxImage();
+    }
+
+    function prevImage() {
+      currentImageIndex = currentImageIndex <= 1 ? totalImages : currentImageIndex - 1;
+      updateLightboxImage();
+    }
+
+    // Event listeners for lightbox
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbNext').addEventListener('click', nextImage);
+    document.getElementById('lbPrev').addEventListener('click', prevImage);
+
+    // Close lightbox when clicking on the background
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (document.getElementById('lightbox').classList.contains('open')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      }
+    });
+
+    // Update translations for new content
     const translations = {
       en: {
-        logoText: 'Fereshteh Shahani Gallery',
+        logoText: 'Feresteh Shahani Gallery',
         navHome: 'Home',
         navGallery: 'Gallery',
         navAbout: 'About Me',
-        heroTitle: 'Fereshteh Shahani Gallery',
+        heroTitle: 'Feresteh Shahani Gallery',
         heroSubtitle: 'Realistic Artwork with Pen & Pencil ✏️',
         galleryTitle: 'My Artworks',
         aboutTitle: 'About Me',
-        aboutText: 'Welcome to my gallery! I am Fereshteh Shahani and I create realistic artworks with pen and pencil. Each piece is created with patience, precision and passion for detail. I find my inspiration in the beauty of everyday life and the complexity of human expression.',
+        aboutText: 'Welcome to my gallery! I am Feresteh Shahani and I create realistic artworks with pen and pencil. Each piece is created with patience, precision and passion for detail. I find my inspiration in the beauty of everyday life and the complexity of human expression.',
         contactTitle: 'Contact',
         contactText: 'Interested in my artwork? For purchase, exhibitions, commissions or collaborations, feel free to reach out to me. I\'d love to hear from you!',
         emailButton: 'fereshtehshahani2011@hotmail.com',
         purchaseStrong: 'Interested in purchasing an artwork?',
-        purchaseDescription: 'Contact me directly to discuss availability, pricing, and commission opportunities.'
+        purchaseDescription: 'Use the + button to select artworks, then proceed to purchase to send your inquiry.',
+        purchaseTitle: 'Purchase Artworks',
+        selectedArtworks: 'Selected Artworks',
+        sendInquiry: 'Send Purchase Inquiry',
+        thankYou: 'Thank You for Your Interest!',
+        confirmationMessage: 'Your purchase inquiry has been sent to Feresteh. You will receive a confirmation email shortly.',
+        emptyCart: 'No artworks selected yet.',
+        selectFromGallery: 'Please select artworks from the gallery first.',
+        remove: 'Remove',
+        firstNameLabel: 'First Name *',
+        lastNameLabel: 'Last Name *',
+        emailLabel: 'Email Address *',
+        messageLabel: 'Additional Message'
       },
       de: {
-        logoText: 'Fereshteh Shahani Galerie',
+        logoText: 'Feresteh Shahani Galerie',
         navHome: 'Home',
         navGallery: 'Galerie',
         navAbout: 'Über mich',
-        heroTitle: 'Fereshteh Shahani Galerie',
+        heroTitle: 'Feresteh Shahani Galerie',
         heroSubtitle: 'Realistische Kunstwerke mit Kugelschreiber & Bleistift ✏️',
         galleryTitle: 'Meine Kunstwerke',
         aboutTitle: 'Über mich',
-        aboutText: 'Willkommen in meiner Galerie! Ich bin Fereshteh Shahani und erschaffe realistische Kunstwerke mit Kugelschreiber und Bleistift. Jedes Werk entsteht durch Geduld, Präzision und Leidenschaft für Details. Meine Inspiration finde ich in der Schönheit des Alltäglichen und der Komplexität menschlicher Ausdrucksformen.',
+        aboutText: 'Willkommen in meiner Galerie! Ich bin Feresteh Shahani und erschaffe realistische Kunstwerke mit Kugelschreiber und Bleistift. Jedes Werk entsteht durch Geduld, Präzision und Leidenschaft für Details. Meine Inspiration finde ich in der Schönheit des Alltäglichen und der Komplexität menschlicher Ausdrucksformen.',
         contactTitle: 'Kontakt',
         contactText: 'Interessiert an meinen Kunstwerken? Für Verkauf, Ausstellungen, Auftragsarbeiten oder Zusammenarbeit können Sie mich gerne kontaktieren. Ich freue mich von Ihnen zu hören!',
         emailButton: 'fereshtehshahani2011@hotmail.com',
         purchaseStrong: 'Interessiert an einem Kunstwerk?',
-        purchaseDescription: 'Kontaktieren Sie mich direkt, um Verfügbarkeit, Preise und Auftragsarbeiten zu besprechen.'
+        purchaseDescription: 'Verwenden Sie die + Schaltfläche, um Kunstwerke auszuwählen, und fahren Sie dann mit dem Kauf fort, um Ihre Anfrage zu senden.',
+        purchaseTitle: 'Kunstwerke Kaufen',
+        selectedArtworks: 'Ausgewählte Kunstwerke',
+        sendInquiry: 'Kaufanfrage Senden',
+        thankYou: 'Vielen Dank für Ihr Interesse!',
+        confirmationMessage: 'Ihre Kaufanfrage wurde an Feresteh gesendet. Sie erhalten in Kürze eine Bestätigungs-E-Mail.',
+        emptyCart: 'Noch keine Kunstwerke ausgewählt.',
+        selectFromGallery: 'Bitte wählen Sie zuerst Kunstwerke aus der Galerie aus.',
+        remove: 'Entfernen',
+        firstNameLabel: 'Vorname *',
+        lastNameLabel: 'Nachname *',
+        emailLabel: 'E-Mail-Adresse *',
+        messageLabel: 'Zusätzliche Nachricht'
       },
       fa: {
         logoText: 'گالری فرشته شاهی',
@@ -1087,27 +1466,170 @@
         contactText: 'به آثار هنری من علاقه‌مند هستید؟ برای خرید، نمایشگاه‌ها، سفارشات یا همکاری، می‌توانید با من تماس بگیرید. خوشحال می‌شوم پیام شما را دریافت کنم!',
         emailButton: 'fereshtehshahani2011@hotmail.com',
         purchaseStrong: 'علاقه‌مند به خرید یک اثر هنری هستید؟',
-        purchaseDescription: 'مستقیماً با من تماس بگیرید تا در مورد موجودی، قیمت‌ها و فرصت‌های سفارش کاری صحبت کنیم.'
+        purchaseDescription: 'از دکمه + برای انتخاب آثار هنری استفاده کنید، سپس برای ارسال درخواست خود به بخش خرید بروید.',
+        purchaseTitle: 'خرید آثار هنری',
+        selectedArtworks: 'آثار هنری انتخاب شده',
+        sendInquiry: 'ارسال درخواست خرید',
+        thankYou: 'از علاقه شما سپاسگزاریم!',
+        confirmationMessage: 'درخواست خرید شما به فرشته ارسال شد. به زودی ایمیل تأیید دریافت خواهید کرد.',
+        emptyCart: 'هنوز هیچ اثر هنری انتخاب نشده است.',
+        selectFromGallery: 'لطفاً ابتدا آثار هنری را از گالری انتخاب کنید.',
+        remove: 'حذف',
+        firstNameLabel: 'نام *',
+        lastNameLabel: 'نام خانوادگی *',
+        emailLabel: 'آدرس ایمیل *',
+        messageLabel: 'پیام اضافی'
       }
     };
 
-    function showPage(pageId) {
-      document.querySelectorAll('.page-container').forEach(page => {
-        page.classList.remove('active');
+    function toggleArtworkSelection(artworkNumber, button) {
+      const item = document.querySelector(`[data-artwork="${artworkNumber}"]`);
+      
+      if (selectedArtworks.has(artworkNumber)) {
+        selectedArtworks.delete(artworkNumber);
+        item.classList.remove('selected');
+        button.classList.remove('selected');
+        button.textContent = '+';
+      } else {
+        selectedArtworks.add(artworkNumber);
+        item.classList.add('selected');
+        button.classList.add('selected');
+        button.textContent = '✓';
+      }
+      
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartCount = document.getElementById('cartCount');
+      cartCount.textContent = selectedArtworks.size;
+      
+      updateCartPage();
+    }
+
+    function updateCartPage() {
+      const cartItemsContainer = document.getElementById('cartItems');
+      const selectedArtworksList = document.getElementById('selectedArtworksList');
+      
+      // Update selected artworks list
+      selectedArtworksList.innerHTML = '';
+      Array.from(selectedArtworks).forEach(artworkNumber => {
+        const numberElement = document.createElement('div');
+        numberElement.className = 'artwork-number';
+        numberElement.textContent = artworkNumber;
+        selectedArtworksList.appendChild(numberElement);
       });
       
-      document.getElementById(`${pageId}-page`).classList.add('active');
+      // Update cart items
+      cartItemsContainer.innerHTML = '';
       
-      navLinks.classList.remove('active');
-      menuToggle.classList.remove('active');
+      if (selectedArtworks.size === 0) {
+        cartItemsContainer.innerHTML = `
+          <div class="empty-cart">
+            <p>${getTranslation('emptyCart')}</p>
+            <button class="page-button" onclick="showPage('gallery')">
+              ${getTranslation('selectFromGallery')}
+            </button>
+          </div>
+        `;
+      } else {
+        Array.from(selectedArtworks).forEach(artworkNumber => {
+          const cartItem = document.createElement('div');
+          cartItem.className = 'cart-item';
+          cartItem.innerHTML = `
+            <div class="cart-item-image">
+              <img src="${getArtworkImage(artworkNumber)}" alt="Artwork ${artworkNumber}">
+            </div>
+            <div class="cart-item-details">
+              <div class="cart-item-number">Artwork #${artworkNumber}</div>
+              <p>Realistic pen and pencil drawing</p>
+            </div>
+            <button class="cart-item-remove" onclick="removeFromCart(${artworkNumber})">
+              ${getTranslation('remove')}
+            </button>
+          `;
+          cartItemsContainer.appendChild(cartItem);
+        });
+      }
+    }
+
+    function removeFromCart(artworkNumber) {
+      selectedArtworks.delete(artworkNumber);
+      const item = document.querySelector(`[data-artwork="${artworkNumber}"]`);
+      const button = item.querySelector('.select-btn');
+      if (item) {
+        item.classList.remove('selected');
+        button.classList.remove('selected');
+        button.textContent = '+';
+      }
+      updateCart();
+    }
+
+    function getArtworkImage(artworkNumber) {
+      const imageMap = {
+        1: 'IMG_0471.JPG', 2: 'IMG_0472.JPG', 3: 'IMG_0474.JPG', 4: 'IMG_0476.JPG', 5: 'IMG_0477.JPG',
+        6: 'IMG_0479.JPG', 7: 'IMG_0481.JPG', 8: 'IMG_0482.JPG', 9: 'IMG_0485.JPG', 10: 'IMG_0486.JPG',
+        11: 'photo_2025-09-19_01-14-34.jpg', 12: 'photo_2025-10-02_19-04-36.jpg', 13: 'photo_2025-10-02_19-04-44.jpg',
+        14: 'photo_2025-10-02_19-04-51.jpg', 15: 'photo_2025-10-02_19-05-39.jpg', 16: 'photo_2025-10-02_19-06-08.jpg'
+      };
+      return imageMap[artworkNumber] || 'IMG_0471.JPG';
+    }
+
+    function submitOrder() {
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
       
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (!firstName || !lastName || !email) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      if (selectedArtworks.size === 0) {
+        alert('Please select at least one artwork.');
+        return;
+      }
+      
+      // Prepare email content
+      const artworkList = Array.from(selectedArtworks).join(', ');
+      const subject = `Art Purchase Inquiry - ${firstName} ${lastName}`;
+      const body = `
+Purchase Inquiry Details:
+
+Name: ${firstName} ${lastName}
+Email: ${email}
+Selected Artworks: ${artworkList}
+
+Additional Message:
+${message}
+
+---
+This inquiry was sent from Feresteh Shahani Gallery website.
+      `;
+      
+      // Send email to Feresteh
+      const ferestehEmail = 'fereshtehshahani2011@hotmail.com';
+      const mailtoLink = `mailto:${ferestehEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      document.getElementById('orderForm').style.display = 'none';
+      document.getElementById('successMessage').style.display = 'block';
+    }
+
+    function getTranslation(key) {
+      const lang = document.getElementById('languageSelect').value;
+      return translations[lang][key] || key;
     }
 
     function changeLanguage() {
       const lang = document.getElementById('languageSelect').value;
       const t = translations[lang];
       
+      // Update existing translations
       document.getElementById('logoText').textContent = t.logoText;
       document.getElementById('navHome').textContent = t.navHome;
       document.getElementById('navGallery').textContent = t.navGallery;
@@ -1123,10 +1645,57 @@
       document.getElementById('purchaseStrong').textContent = t.purchaseStrong;
       document.getElementById('purchaseDescription').textContent = t.purchaseDescription;
       
+      // Update new purchase page translations
+      const purchaseTitle = document.getElementById('purchaseTitle');
+      const submitButton = document.getElementById('submitButton');
+      const successMessage = document.getElementById('successMessage');
+      const firstNameLabel = document.getElementById('firstNameLabel');
+      const lastNameLabel = document.getElementById('lastNameLabel');
+      const emailLabel = document.getElementById('emailLabel');
+      const messageLabel = document.getElementById('messageLabel');
+      
+      if (purchaseTitle) purchaseTitle.textContent = t.purchaseTitle;
+      if (submitButton) submitButton.textContent = t.sendInquiry;
+      if (successMessage) {
+        successMessage.querySelector('h3').textContent = t.thankYou;
+        successMessage.querySelector('p').textContent = t.confirmationMessage;
+      }
+      if (firstNameLabel) firstNameLabel.textContent = t.firstNameLabel;
+      if (lastNameLabel) lastNameLabel.textContent = t.lastNameLabel;
+      if (emailLabel) emailLabel.textContent = t.emailLabel;
+      if (messageLabel) messageLabel.textContent = t.messageLabel;
+      
       document.body.style.direction = lang === 'fa' ? 'rtl' : 'ltr';
       document.documentElement.lang = lang;
+      
+      // Update cart page content
+      updateCartPage();
     }
 
+    function showPage(pageId) {
+      document.querySelectorAll('.page-container').forEach(page => {
+        page.classList.remove('active');
+      });
+      
+      document.getElementById(`${pageId}-page`).classList.add('active');
+      
+      navLinks.classList.remove('active');
+      menuToggle.classList.remove('active');
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Update cart when showing purchase page
+      if (pageId === 'purchase') {
+        updateCartPage();
+      }
+    }
+
+    // Initialize the page
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCart();
+    });
+
+    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
 
@@ -1135,149 +1704,13 @@
       menuToggle.classList.toggle('active');
     });
 
+    // Close mobile menu when clicking on links
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
         menuToggle.classList.remove('active');
       });
     });
-
-    (function setupLightbox() {
-      const lb = document.getElementById('lightbox');
-      const lbStage = document.getElementById('lbStage');
-      const lbImg = document.getElementById('lbImg');
-      const lbClose = document.getElementById('lbClose');
-      const lbPrev = document.getElementById('lbPrev');
-      const lbNext = document.getElementById('lbNext');
-      const lbCounter = document.getElementById('lbCounter');
-      const grid = document.getElementById('galleryGrid');
-      const items = Array.from(grid.querySelectorAll('.gallery-item img'));
-      const cards = Array.from(grid.querySelectorAll('.gallery-item'));
-
-      let currentIndex = 0;
-      let scale = 1;
-      let tx = 0;
-      let ty = 0;
-      const minScale = 1;
-      const maxScale = 5;
-      const pointers = new Map();
-      let baseDist = 1;
-      let baseScale = 1;
-
-      const distance = (p1, p2) => Math.hypot(p2.clientX - p1.clientX, p2.clientY - p1.clientY);
-      const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
-
-      grid.addEventListener('click', (e) => {
-        const card = e.target.closest('.gallery-item');
-        if (!card) return;
-        const i = cards.indexOf(card);
-        if (i > -1) openAt(i);
-      });
-
-      cards.forEach((card, i) => {
-        card.setAttribute('tabindex', '0');
-        card.setAttribute('role', 'button');
-        card.setAttribute('aria-label', 'Open enlarged view');
-        card.addEventListener('keydown', (e) => { if (e.key === 'Enter') openAt(i); });
-      });
-
-      lbClose.addEventListener('click', close);
-      lbNext.addEventListener('click', () => { resetTransform(); next(); });
-      lbPrev.addEventListener('click', () => { resetTransform(); prev(); });
-
-      lb.addEventListener('click', (e) => {
-        const controls = [lbStage, lbImg, lbNext, lbPrev, lbClose];
-        if (!controls.includes(e.target) && e.target === lb) {
-          close();
-        }
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (!lb.classList.contains('open')) return;
-        if (e.key === 'Escape') close();
-        if (e.key === 'ArrowRight') next();
-        if (e.key === 'ArrowLeft') prev();
-      });
-
-      function openAt(index) {
-        currentIndex = index;
-        lbImg.src = items[currentIndex].src;
-        lbImg.alt = items[currentIndex].alt;
-        lbCounter.textContent = `${currentIndex + 1} / ${items.length}`;
-        lb.classList.add('open');
-        document.body.classList.add('lb-lock');
-        resetTransform();
-      }
-
-      function close() {
-        lb.classList.remove('open');
-        document.body.classList.remove('lb-lock');
-        resetTransform();
-      }
-
-      function next() {
-        currentIndex = (currentIndex + 1) % items.length;
-        openAt(currentIndex);
-      }
-
-      function prev() {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        openAt(currentIndex);
-      }
-
-      function resetTransform() {
-        scale = 1;
-        tx = 0;
-        ty = 0;
-        updateTransform();
-      }
-
-      function updateTransform() {
-        lbStage.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`;
-      }
-
-      lbStage.addEventListener('pointerdown', (e) => {
-        e.preventDefault();
-        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-      });
-
-      lbStage.addEventListener('pointermove', (e) => {
-        if (pointers.size === 1) {
-          const pointer = pointers.get(e.pointerId);
-          if (pointer) {
-            tx += e.clientX - pointer.x;
-            ty += e.clientY - pointer.y;
-            pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-            updateTransform();
-          }
-        } else if (pointers.size === 2) {
-          const [p1, p2] = Array.from(pointers.values());
-          const currentDist = distance(p1, p2);
-          scale = clamp(baseScale * (currentDist / baseDist), minScale, maxScale);
-          updateTransform();
-        }
-      });
-
-      lbStage.addEventListener('pointerup', (e) => {
-        pointers.delete(e.pointerId);
-        if (pointers.size === 0) {
-          baseScale = scale;
-        }
-      });
-
-      lbStage.addEventListener('pointercancel', (e) => {
-        pointers.delete(e.pointerId);
-      });
-
-      lbStage.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        const delta = -Math.sign(e.deltaY) * 0.2;
-        scale = clamp(scale + delta, minScale, maxScale);
-        updateTransform();
-      });
-    })();
   </script>
 </body>
 </html>
-
-
