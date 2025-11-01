@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Feresteh Shahani - Realistische Kunstwerke mit Ölfarben und Acryl"/>
+<meta name="description" content="Feresteh Shahani - Realistische Kunstwerke mit Kugelschreiber und Bleistift"/>
 <title>Feresteh Shahani | Realistische Kunst</title>
 <meta property="og:title" content="Feresteh Shahani – Realistische Kunst"/>
-<meta property="og:description" content="Ölfarben & Acryl Kunst von Feresteh Shahani"/>
+<meta property="og:description" content="Kugelschreiber & Bleistift Kunst von Feresteh Shahani"/>
 <meta property="og:type" content="website"/>
 <meta name="theme-color" content="#1a1a1a"/>
 <style>
@@ -110,7 +110,7 @@ nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;al
 .lightbox .close-btn{position:absolute;top:25px;right:25px;background:rgba(212,175,55,.15);border:2px solid rgba(212,175,55,.5);color:#d4af37;font-size:1.8rem;width:55px;height:55px;border-radius:50%;cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;z-index:2001;font-weight:bold}
 .lightbox .close-btn:hover{background:rgba(212,175,55,.3);border-color:#d4af37;transform:scale(1.15) rotate(90deg)}
 .lightbox .counter{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);color:#d4af37;font-size:1.2rem;background:rgba(0,0,0,.7);padding:.8rem 1.8rem;border-radius:50px;backdrop-filter:blur(10px);font-weight:700;border:2px solid rgba(212,175,55,.3)}
-.lightbox .nav{position:absolute;top:0;left:0;width=100%;height=100%;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+.lightbox .nav{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
 .lightbox .nav button{pointer-events:auto;background:rgba(212,175,55,.15);border:2px solid rgba(212,175,55,.5);color:#d4af37;font-size:2.2rem;width:65px;height:65px;margin:0 1.5rem;border-radius:50%;cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);font-weight:bold;display:flex;align-items:center;justify-content:center}
 .lightbox .nav button:hover{background:rgba(212,175,55,.3);border-color:#d4af37;transform:scale(1.15)}
 body.lb-lock{overflow:hidden}
@@ -121,20 +121,20 @@ body.lb-lock{overflow:hidden}
 .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
 @media(max-width:768px){
 .menu-toggle{display:flex}
-.nav-links{position:fixed;top:80px;left:0;width=100%;background:rgba(0,0,0,.97);flex-direction:column;padding:2.5rem;gap:1.5rem;transform:translateY(-100%);opacity:0;visibility:hidden;transition:all .5s;backdrop-filter:blur(25px);border-bottom:2px solid rgba(212,175,55,.3)}
+.nav-links{position:fixed;top:80px;left:0;width:100%;background:rgba(0,0,0,.97);flex-direction:column;padding:2.5rem;gap:1.5rem;transform:translateY(-100%);opacity:0;visibility:hidden;transition:all .5s;backdrop-filter:blur(25px);border-bottom:2px solid rgba(212,175,55,.3)}
 .nav-links.active{transform:translateY(0);opacity:1;visibility:visible}
 .language-item{margin-left:0;margin-top:1.5rem}
-.language-item .language-selector{min-width=100%}
+.language-item .language-selector{min-width:100%}
 .home-content h1{font-size:2.8rem}
 .home-content p{font-size:1.2rem}
 .nav-links a{font-size:1.15rem;padding:15px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
 .logo{font-size:1.3rem;letter-spacing:1.5px}
 .section-title{font-size:2.5rem}
 .home-buttons{flex-direction:column;align-items:center;gap:1.5rem}
-.page-button{width=100%;max-width:320px;padding:18px 40px}
+.page-button{width:100%;max-width:320px;padding:18px 40px}
 .gallery{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
 .cart-item{flex-direction:column;text-align:center;gap:1.5rem;padding:2rem}
-.cart-item-image{width=100%;height:220px}
+.cart-item-image{width:100%;height:220px}
 .about-content,.contact-content,.purchase-info,.order-form{padding:2.5rem}
 .lightbox .nav button{font-size:1.8rem;width:55px;height:55px;margin:0 .8rem}
 .lightbox .close-btn{font-size:1.5rem;width:45px;height:45px;top:18px;right:18px}
@@ -168,7 +168,7 @@ body.lb-lock{overflow:hidden}
 <section class="home-page">
 <div class="home-content">
 <h1 id="heroTitle">Feresteh Shahani</h1>
-<p id="heroSubtitle">Realistische Kunstwerke mit Ölfarben & Acryl 🎨</p>
+<p id="heroSubtitle">Realistische Kunstwerke mit Kugelschreiber & Bleistift ✏️</p>
 <div class="home-buttons">
 <button class="page-button" onclick="showPage('gallery')"><span id="btnGallery">Galerie ansehen</span></button>
 <button class="page-button" onclick="showPage('about-contact')"><span id="btnAbout">Über mich</span></button>
@@ -334,4 +334,467 @@ body.lb-lock{overflow:hidden}
 <input type="text" id="firstName" required placeholder="Ihr Vorname">
 </div>
 <div class="form-group">
-<label for="lastName" id="last
+<label for="lastName" id="lastNameLabel">Nachname *</label>
+<input type="text" id="lastName" required placeholder="Ihr Nachname">
+</div>
+<div class="form-group">
+<label for="email" id="emailLabel">E-Mail-Adresse *</label>
+<input type="email" id="email" required placeholder="Ihre E-Mail-Adresse">
+</div>
+<div class="form-group">
+<label for="message" id="messageLabel">Zusätzliche Nachricht</label>
+<textarea id="message" rows="4" placeholder="Zusätzliche Informationen oder Fragen..."></textarea>
+</div>
+<div class="selected-artworks">
+<h4>Ausgewählte Kunstwerke:</h4>
+<div class="artwork-numbers" id="selectedArtworksList">
+<!-- Selected artworks will be shown here -->
+</div>
+</div>
+<button class="submit-button" onclick="submitOrder()" id="submitButton">
+<span>Kaufanfrage Senden</span>
+</button>
+</div>
+<div class="success-message" id="successMessage" style="display:none">
+<h3>Vielen Dank für Ihr Interesse!</h3>
+<p>Ihre Kaufanfrage wurde an Feresteh gesendet. Sie erhalten in Kürze eine Bestätigungs-E-Mail.</p>
+<button class="page-button" onclick="showPage('home')">Zurück zur Startseite</button>
+</div>
+</section>
+</div>
+
+<div id="about-contact-page" class="page-container">
+<section class="about-contact-page">
+<h2 class="section-title" id="aboutTitle">Über mich</h2>
+<div class="about-content">
+<p id="aboutText">
+Willkommen in meiner Galerie! Ich bin Feresteh Shahani und erschaffe realistische Kunstwerke mit Kugelschreiber und Bleistift. Jedes Werk entsteht durch Geduld, Präzision und Leidenschaft für Details. Meine Inspiration finde ich in der Schönheit des Alltäglichen und der Komplexität menschlicher Ausdrucksformen.
+</p>
+</div>
+<h2 class="section-title" id="contactTitle">Kontakt</h2>
+<div class="contact-content">
+<p id="contactText">
+Interessiert an meinen Kunstwerken? Für Verkauf, Ausstellungen, Auftragsarbeiten oder Zusammenarbeit können Sie mich gerne kontaktieren. Ich freue mich von Ihnen zu hören!
+</p>
+<a href="mailto:fereshtehshahani2011@hotmail.com" class="email-button" id="emailButton">
+<span>fereshtehshahani2011@hotmail.com</span>
+</a>
+<div class="social-links">
+<a href="https://facebook.com/Fereshtehshahani" target="_blank" class="social-button">
+<span>Facebook</span>
+</a>
+<a href="https://instagram.com/ferestehshahani" target="_blank" class="social-button">
+<span>Instagram @ferestehshahani</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+
+<div class="lightbox" id="lightbox">
+<button class="close-btn" id="lbClose">✕</button>
+<div class="nav">
+<button id="lbPrev">←</button>
+<button id="lbNext">→</button>
+</div>
+<div class="lightbox-content">
+<img class="lightbox-img" id="lbImg" src="" alt="Großansicht">
+</div>
+<div class="counter" id="lbCounter">1 / 16</div>
+</div>
+
+<script>
+// Shopping Cart Functionality
+let selectedArtworks = new Set();
+
+// Lightbox functionality
+let currentImageIndex = 0;
+const totalImages = 16;
+
+function openLightbox(imageIndex) {
+  currentImageIndex = imageIndex;
+  updateLightboxImage();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.classList.add('lb-lock');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.classList.remove('lb-lock');
+}
+
+function updateLightboxImage() {
+ const imageMap = {
+  1: '1.jpg', 2: '2.jpg', 3: '3.jpg', 4: '4.jpg', 5: '5.jpg',
+  6: '6.jpg', 7: '7.jpg', 8: '8.jpg', 9: '9.jpg', 10: '10.jpg',
+  11: '11.jpg', 12: '12.jpg', 13: '13.jpg', 14: '14.jpg', 15: '15.jpg',
+  16: '16.jpg'
+};
+
+  
+  const imageSrc = imageMap[currentImageIndex] || '1.jpg';
+  document.getElementById('lbImg').src = imageSrc;
+  document.getElementById('lbCounter').textContent = `${currentImageIndex} / ${totalImages}`;
+}
+
+function nextImage() {
+  currentImageIndex = currentImageIndex >= totalImages ? 1 : currentImageIndex + 1;
+  updateLightboxImage();
+}
+
+function prevImage() {
+  currentImageIndex = currentImageIndex <= 1 ? totalImages : currentImageIndex - 1;
+  updateLightboxImage();
+}
+
+// Event listeners for lightbox
+document.getElementById('lbClose').addEventListener('click', closeLightbox);
+document.getElementById('lbNext').addEventListener('click', nextImage);
+document.getElementById('lbPrev').addEventListener('click', prevImage);
+
+// Close lightbox when clicking on the background
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeLightbox();
+  }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  if (document.getElementById('lightbox').classList.contains('open')) {
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  }
+});
+
+// Translations
+const translations = {
+  en: {
+    logoText: 'Feresteh Shahani',
+    navHome: 'Home',
+    navGallery: 'Gallery',
+    navAbout: 'About Me',
+    heroTitle: 'Feresteh Shahani',
+    heroSubtitle: 'Realistic Artwork with Pen & Pencil ✏️',
+    galleryTitle: 'My Artworks',
+    aboutTitle: 'About Me',
+    aboutText: 'Welcome to my gallery! I am Feresteh Shahani and I create realistic artworks with pen and pencil. Each piece is created with patience, precision and passion for detail. I find my inspiration in the beauty of everyday life and the complexity of human expression.',
+    contactTitle: 'Contact',
+    contactText: 'Interested in my artwork? For purchase, exhibitions, commissions or collaborations, feel free to reach out to me. I\'d love to hear from you!',
+    emailButton: 'fereshtehshahani2011@hotmail.com',
+    purchaseStrong: 'Interested in purchasing an artwork?',
+    purchaseDescription: 'Use the + button to select artworks, then proceed to purchase to send your inquiry.',
+    purchaseTitle: 'Purchase Artworks',
+    selectedArtworks: 'Selected Artworks',
+    sendInquiry: 'Send Purchase Inquiry',
+    thankYou: 'Thank You for Your Interest!',
+    confirmationMessage: 'Your purchase inquiry has been sent to Feresteh. You will receive a confirmation email shortly.',
+    emptyCart: 'No artworks selected yet.',
+    selectFromGallery: 'Please select artworks from the gallery first.',
+    remove: 'Remove',
+    firstNameLabel: 'First Name *',
+    lastNameLabel: 'Last Name *',
+    emailLabel: 'Email Address *',
+    messageLabel: 'Additional Message',
+    btnGallery: 'View Gallery',
+    btnAbout: 'About Me'
+  },
+  de: {
+    logoText: 'Feresteh Shahani',
+    navHome: 'Home',
+    navGallery: 'Galerie',
+    navAbout: 'Über mich',
+    heroTitle: 'Feresteh Shahani',
+    heroSubtitle: 'Realistische Kunstwerke mit Kugelschreiber & Bleistift ✏️',
+    galleryTitle: 'Meine Kunstwerke',
+    aboutTitle: 'Über mich',
+    aboutText: 'Willkommen in meiner Galerie! Ich bin Feresteh Shahani und erschaffe realistische Kunstwerke mit Kugelschreiber und Bleistift. Jedes Werk entsteht durch Geduld, Präzision und Leidenschaft für Details. Meine Inspiration finde ich in der Schönheit des Alltäglichen und der Komplexität menschlicher Ausdrucksformen.',
+    contactTitle: 'Kontakt',
+    contactText: 'Interessiert an meinen Kunstwerken? Für Verkauf, Ausstellungen, Auftragsarbeiten oder Zusammenarbeit können Sie mich gerne kontaktieren. Ich freue mich von Ihnen zu hören!',
+    emailButton: 'fereshtehshahani2011@hotmail.com',
+    purchaseStrong: 'Interessiert an einem Kunstwerk?',
+    purchaseDescription: 'Verwenden Sie die + Schaltfläche, um Kunstwerke auszuwählen, und fahren Sie dann mit dem Kauf fort, um Ihre Anfrage zu senden.',
+    purchaseTitle: 'Kunstwerke Kaufen',
+    selectedArtworks: 'Ausgewählte Kunstwerke',
+    sendInquiry: 'Kaufanfrage Senden',
+    thankYou: 'Vielen Dank für Ihr Interesse!',
+    confirmationMessage: 'Ihre Kaufanfrage wurde an Feresteh gesendet. Sie erhalten in Kürze eine Bestätigungs-E-Mail.',
+    emptyCart: 'Noch keine Kunstwerke ausgewählt.',
+    selectFromGallery: 'Bitte wählen Sie zuerst Kunstwerke aus der Galerie aus.',
+    remove: 'Entfernen',
+    firstNameLabel: 'Vorname *',
+    lastNameLabel: 'Nachname *',
+    emailLabel: 'E-Mail-Adresse *',
+    messageLabel: 'Zusätzliche Nachricht',
+    btnGallery: 'Galerie ansehen',
+    btnAbout: 'Über mich'
+  },
+  fa: {
+    logoText: 'فرشته شاهی',
+    navHome: 'خانه',
+    navGallery: 'گالری',
+    navAbout: 'درباره من',
+    heroTitle: 'فرشته شاهی',
+    heroSubtitle: 'آثار هنری واقع‌گرایانه با خودکار و مداد ✏️',
+    galleryTitle: 'آثار هنری من',
+    aboutTitle: 'درباره من',
+    aboutText: 'من فرشته هستم به صفحه ی من خوش آمدید. عاشق نقاشی ام نقاشی های من تلفیق جهان پیرامونم با کمی چاشنی انتزاع و تخیل هستند که با تکنیک رنگ و روغن و گاهی اکریلیک خلق می‌شوند امیدوارم از دیدن آنها لذت ببرید.',
+    contactTitle: 'تماس',
+    contactText: 'به آثار هنری من علاقه‌مند هستید؟ برای خرید، نمایشگاه‌ها، سفارشات یا همکاری، می‌توانید با من تماس بگیرید. خوشحال می‌شوم پیام شما را دریافت کنم!',
+    emailButton: 'fereshtehshahani2011@hotmail.com',
+    purchaseStrong: 'علاقه‌مند به خرید یک اثر هنری هستید?',
+    purchaseDescription: 'از دکمه + برای انتخاب آثار هنری استفاده کنید، سپس برای ارسال درخواست خود به بخش خرید بروید.',
+    purchaseTitle: 'خرید آثار هنری',
+    selectedArtworks: 'آثار هنری انتخاب شده',
+    sendInquiry: 'ارسال درخواست خرید',
+    thankYou: 'از علاقه شما سپاسگزاریم!',
+    confirmationMessage: 'درخواست خرید شما به فرشته ارسال شد. به زودی ایمیل تأیید دریافت خواهید کرد.',
+    emptyCart: 'هنوز هیچ اثر هنری انتخاب نشده است.',
+    selectFromGallery: 'لطفاً ابتدا آثار هنری را از گالری انتخاب کنید.',
+    remove: 'حذف',
+    firstNameLabel: 'نام *',
+    lastNameLabel: 'نام خانوادگی *',
+    emailLabel: 'آدرس ایمیل *',
+    messageLabel: 'پیام اضافی',
+    btnGallery: 'مشاهده گالری',
+    btnAbout: 'درباره من'
+  }
+};
+
+function toggleArtworkSelection(artworkNumber, button) {
+  const item = document.querySelector(`[data-artwork="${artworkNumber}"]`);
+  
+  if (selectedArtworks.has(artworkNumber)) {
+    selectedArtworks.delete(artworkNumber);
+    item.classList.remove('selected');
+    button.classList.remove('selected');
+    button.textContent = '+';
+  } else {
+    selectedArtworks.add(artworkNumber);
+    item.classList.add('selected');
+    button.classList.add('selected');
+    button.textContent = '✓';
+  }
+  
+  updateCart();
+}
+
+function updateCart() {
+  const cartCount = document.getElementById('cartCount');
+  cartCount.textContent = selectedArtworks.size;
+  
+  updateCartPage();
+}
+
+function updateCartPage() {
+  const cartItemsContainer = document.getElementById('cartItems');
+  const selectedArtworksList = document.getElementById('selectedArtworksList');
+  
+  // Update selected artworks list
+  selectedArtworksList.innerHTML = '';
+  Array.from(selectedArtworks).forEach(artworkNumber => {
+    const numberElement = document.createElement('div');
+    numberElement.className = 'artwork-number';
+    numberElement.textContent = artworkNumber;
+    selectedArtworksList.appendChild(numberElement);
+  });
+  
+  // Update cart items
+  cartItemsContainer.innerHTML = '';
+  
+  if (selectedArtworks.size === 0) {
+    cartItemsContainer.innerHTML = `
+      <div class="empty-cart">
+        <p>${getTranslation('emptyCart')}</p>
+        <button class="page-button" onclick="showPage('gallery')">
+          ${getTranslation('selectFromGallery')}
+        </button>
+      </div>
+    `;
+  } else {
+    Array.from(selectedArtworks).forEach(artworkNumber => {
+      const cartItem = document.createElement('div');
+      cartItem.className = 'cart-item';
+      cartItem.innerHTML = `
+        <div class="cart-item-image">
+          <img src="${getArtworkImage(artworkNumber)}" alt="Artwork ${artworkNumber}">
+        </div>
+        <div class="cart-item-details">
+          <div class="cart-item-number">Kunstwerk #${artworkNumber}</div>
+          <p>Realistische Kugelschreiber- und Bleistiftzeichnung</p>
+        </div>
+        <button class="cart-item-remove" onclick="removeFromCart(${artworkNumber})">
+          ${getTranslation('remove')}
+        </button>
+      `;
+      cartItemsContainer.appendChild(cartItem);
+    });
+  }
+}
+
+function removeFromCart(artworkNumber) {
+  selectedArtworks.delete(artworkNumber);
+  const item = document.querySelector(`[data-artwork="${artworkNumber}"]`);
+  const button = item.querySelector('.select-btn');
+  if (item) {
+    item.classList.remove('selected');
+    button.classList.remove('selected');
+    button.textContent = '+';
+  }
+  updateCart();
+}
+
+function getArtworkImage(artworkNumber) {
+  const imageMap = {
+  1: '1.jpg', 2: '2.jpg', 3: '3.jpg', 4: '4.jpg', 5: '5.jpg',
+  6: '6.jpg', 7: '7.jpg', 8: '8.jpg', 9: '9.jpg', 10: '10.jpg',
+  11: '11.jpg', 12: '12.jpg', 13: '13.jpg', 14: '14.jpg', 15: '15.jpg',
+  16: '16.jpg'
+};
+
+  return imageMap[artworkNumber] || '1.jpg';
+}
+
+function submitOrder() {
+  const firstName = document.getElementById('firstName').value;
+  const lastName = document.getElementById('lastName').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  
+  if (!firstName || !lastName || !email) {
+    alert('Bitte füllen Sie alle erforderlichen Felder aus.');
+    return;
+  }
+  
+  if (selectedArtworks.size === 0) {
+    alert('Bitte wählen Sie mindestens ein Kunstwerk aus.');
+    return;
+  }
+  
+  const artworkList = Array.from(selectedArtworks).join(', ');
+  
+  // FormSubmit.co verwenden
+  const form = document.createElement('form');
+  form.method = 'POST';
+  form.action = 'https://formsubmit.co/fereshtehshahani2011@hotmail.com';
+  
+  // FormSubmit Konfiguration
+  const fields = {
+    '_subject': `Kunst Kaufanfrage - ${firstName} ${lastName}`,
+    '_captcha': 'false',
+    '_template': 'table',
+    'Name': `${firstName} ${lastName}`,
+    'Email': email,
+    'Ausgewählte Kunstwerke': artworkList,
+    'Nachricht': message || 'Keine zusätzliche Nachricht'
+  };
+  
+  Object.entries(fields).forEach(([key, value]) => {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = key;
+    input.value = value;
+    form.appendChild(input);
+  });
+  
+  document.body.appendChild(form);
+  form.submit();
+}
+
+function getTranslation(key) {
+  const lang = document.getElementById('languageSelect').value;
+  return translations[lang][key] || key;
+}
+
+function changeLanguage() {
+  const lang = document.getElementById('languageSelect').value;
+  const t = translations[lang];
+  
+  // Update all translations
+  document.getElementById('logoText').textContent = t.logoText;
+  document.getElementById('navHome').textContent = t.navHome;
+  document.getElementById('navGallery').textContent = t.navGallery;
+  document.getElementById('navAbout').textContent = t.navAbout;
+  document.getElementById('heroTitle').textContent = t.heroTitle;
+  document.getElementById('heroSubtitle').textContent = t.heroSubtitle;
+  document.getElementById('galleryTitle').textContent = t.galleryTitle;
+  document.getElementById('aboutTitle').textContent = t.aboutTitle;
+  document.getElementById('aboutText').textContent = t.aboutText;
+  document.getElementById('contactTitle').textContent = t.contactTitle;
+  document.getElementById('contactText').textContent = t.contactText;
+  document.getElementById('emailButton').textContent = t.emailButton;
+  document.getElementById('purchaseStrong').textContent = t.purchaseStrong;
+  document.getElementById('purchaseDescription').textContent = t.purchaseDescription;
+  document.getElementById('btnGallery').textContent = t.btnGallery;
+  document.getElementById('btnAbout').textContent = t.btnAbout;
+  
+  // Update purchase page translations
+  const purchaseTitle = document.getElementById('purchaseTitle');
+  const submitButton = document.getElementById('submitButton');
+  const successMessage = document.getElementById('successMessage');
+  const firstNameLabel = document.getElementById('firstNameLabel');
+  const lastNameLabel = document.getElementById('lastNameLabel');
+  const emailLabel = document.getElementById('emailLabel');
+  const messageLabel = document.getElementById('messageLabel');
+  
+  if (purchaseTitle) purchaseTitle.textContent = t.purchaseTitle;
+  if (submitButton) submitButton.querySelector('span').textContent = t.sendInquiry;
+  if (successMessage) {
+    successMessage.querySelector('h3').textContent = t.thankYou;
+    successMessage.querySelector('p').textContent = t.confirmationMessage;
+  }
+  if (firstNameLabel) firstNameLabel.textContent = t.firstNameLabel;
+  if (lastNameLabel) lastNameLabel.textContent = t.lastNameLabel;
+  if (emailLabel) emailLabel.textContent = t.emailLabel;
+  if (messageLabel) messageLabel.textContent = t.messageLabel;
+  
+  document.body.style.direction = lang === 'fa' ? 'rtl' : 'ltr';
+  document.documentElement.lang = lang;
+  
+  // Update cart page content
+  updateCartPage();
+}
+
+function showPage(pageId) {
+  document.querySelectorAll('.page-container').forEach(page => {
+    page.classList.remove('active');
+  });
+  
+  document.getElementById(`${pageId}-page`).classList.add('active');
+  
+  navLinks.classList.remove('active');
+  menuToggle.classList.remove('active');
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  // Update cart when showing purchase page
+  if (pageId === 'purchase') {
+    updateCartPage();
+  }
+}
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', function() {
+  updateCart();
+});
+
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on links
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    menuToggle.classList.remove('active');
+  });
+});
+</script>
+</body>
+</html>
