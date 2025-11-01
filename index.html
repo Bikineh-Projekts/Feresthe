@@ -1,800 +1,764 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Feresteh Shahani - Realistische Kunstwerke mit Kugelschreiber und Bleistift"/>
-<title>Feresteh Shahani | Realistische Kunst</title>
-<meta property="og:title" content="Feresteh Shahani – Realistische Kunst"/>
-<meta property="og:description" content="Kugelschreiber & Bleistift Kunst von Feresteh Shahani"/>
-<meta property="og:type" content="website"/>
-<meta name="theme-color" content="#1a1a1a"/>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);color:#f0f0f0;line-height:1.6;min-height:100vh}
-header{background:rgba(0,0,0,.92);padding:18px 0;position:fixed;width:100%;top:0;z-index:1000;backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.15);box-shadow:0 4px 20px rgba(0,0,0,.3)}
-nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 30px}
-.logo{font-size:26px;font-weight:bold;color:#d4af37;text-transform:uppercase;letter-spacing:2.5px;transition:all .3s;text-shadow:0 2px 8px rgba(212,175,55,.3);cursor:default}
-.logo:hover{color:#f0c748;transform:scale(1.02)}
-.nav-links{display:flex;gap:30px;list-style:none;align-items:center}
-.nav-links a{color:#f0f0f0;text-decoration:none;font-size:14px;text-transform:uppercase;letter-spacing:1.2px;transition:all .3s;position:relative;padding:10px 0;font-weight:500}
-.nav-links a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2.5px;background:linear-gradient(90deg,#d4af37,#f0c748);transition:all .4s;transform:translateX(-50%);border-radius:2px}
-.nav-links a:hover{color:#d4af37}
-.nav-links a:hover::after{width:100%}
-.language-selector{position:relative;background:rgba(255,255,255,.08);border-radius:10px;backdrop-filter:blur(12px);border:1.5px solid rgba(212,175,55,.25);transition:all .3s;overflow:hidden}
-.language-selector:hover{background:rgba(255,255,255,.12);border-color:rgba(212,175,55,.5);transform:translateY(-2px)}
-.language-selector select{padding:.8rem 2.5rem .8rem 1.2rem;font-size:.95rem;border:none;background:transparent;color:#f0f0f0;cursor:pointer;font-weight:500;font-family:Georgia,serif;width:100%;appearance:none}
-.language-selector::after{content:'▼';position:absolute;right:1rem;top:50%;transform:translateY(-50%);font-size:.7rem;color:#d4af37;pointer-events:none}
-.language-selector select option{background:#2d2d2d;color:#f0f0f0}
-.page-container{display:none;min-height:100vh;padding-top:90px;animation:fadeIn .5s}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-.page-container.active{display:block}
-.home-page{min-height:calc(100vh - 90px);display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:radial-gradient(circle at center,rgba(212,175,55,.1) 0%,transparent 70%)}
-.home-content h1{font-size:4.5rem;margin-bottom:2rem;color:#d4af37;text-shadow:0 4px 20px rgba(212,175,55,.4);font-weight:300;letter-spacing:4px;animation:titleGlow 3s ease-in-out infinite}
-@keyframes titleGlow{0%,100%{text-shadow:0 4px 20px rgba(212,175,55,.4)}50%{text-shadow:0 8px 30px rgba(212,175,55,.6)}}
-.home-content p{font-size:1.5rem;margin-bottom:3rem;color:#c8c8c8;font-weight:300;letter-spacing:1.5px}
-.home-buttons{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:3.5rem}
-.page-button{display:inline-block;padding:20px 50px;background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;border-radius:10px;transition:all .4s;border:none;cursor:pointer;font-size:1rem;box-shadow:0 6px 20px rgba(212,175,55,.4);position:relative;overflow:hidden}
-.page-button::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#f0c748 0%,#ffd700 100%);opacity:0;transition:opacity .4s}
-.page-button:hover::before{opacity:1}
-.page-button:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(212,175,55,.6)}
-.page-button span{position:relative;z-index:1}
-.section-title{text-align:center;font-size:3.5rem;margin-bottom:5rem;color:#d4af37;position:relative;padding-bottom:2rem;font-weight:300;letter-spacing:3px}
-.section-title::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120px;height:4px;background:linear-gradient(90deg,transparent,#d4af37,transparent)}
-.gallery-page,.purchase-page,.about-contact-page{max-width:1400px;margin:0 auto;padding:0 30px 60px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2.5rem;margin-top:3rem}
-.gallery-item{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:all .5s;background:rgba(255,255,255,.03);border:2px solid rgba(212,175,55,.2);aspect-ratio:4/5}
-.gallery-item::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,175,55,.1),transparent);opacity:0;transition:opacity .5s;z-index:1}
-.gallery-item:hover::before{opacity:1}
-.gallery-item:hover{transform:translateY(-15px) scale(1.03);box-shadow:0 25px 50px rgba(212,175,55,.4);border-color:rgba(212,175,55,.5)}
-.gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
-.gallery-item:hover img{transform:scale(1.1)}
-.gallery-overlay{position:absolute;top:18px;right:18px;background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a;padding:.7rem 1.2rem;border-radius:50px;font-weight:800;font-size:.95rem;pointer-events:none;box-shadow:0 4px 15px rgba(0,0,0,.3);z-index:2}
-.gallery-actions{position:absolute;top:18px;left:18px;display:flex;gap:12px;z-index:10}
-.action-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;font-weight:bold;font-size:1.2rem;border:none;box-shadow:0 4px 12px rgba(0,0,0,.4)}
-.select-btn{background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a}
-.select-btn:hover{transform:scale(1.15);box-shadow:0 6px 20px rgba(212,175,55,.6)}
-.select-btn.selected{background:linear-gradient(135deg,#4CAF50,#45a049);color:white}
-.zoom-btn{background:rgba(255,255,255,.95);color:#1a1a1a}
-.zoom-btn:hover{transform:scale(1.15);background:white;box-shadow:0 6px 20px rgba(255,255,255,.4)}
-.purchase-info,.about-content,.contact-content,.order-form{background:rgba(255,255,255,.04);padding:3.5rem;border-radius:20px;border:2px solid rgba(212,175,55,.25);transition:all .5s;backdrop-filter:blur(15px);text-align:center}
-.purchase-info:hover,.about-content:hover,.contact-content:hover,.order-form:hover{transform:translateY(-10px);background:rgba(255,255,255,.08);box-shadow:0 20px 50px rgba(212,175,55,.3);border-color:rgba(212,175,55,.5)}
-.purchase-info{max-width:900px;margin:5rem auto 0}
-.purchase-info p{font-size:1.25rem;line-height:2;color:#e5e5e5;font-weight:300}
-.purchase-info strong{color:#d4af37;font-weight:600;font-size:1.3rem}
-.about-content,.contact-content{max-width:900px;margin:0 auto 5rem}
-.about-content p,.contact-content p{color:#e5e5e5;font-size:1.25rem;line-height:2;font-weight:300}
-.social-links{display:flex;gap:2rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap}
-.social-button,.email-button{display:inline-flex;align-items:center;gap:.8rem;background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a!important;text-decoration:none;padding:16px 35px;border-radius:12px;font-weight:700;transition:all .4s;box-shadow:0 6px 20px rgba(212,175,55,.4);font-size:1.05rem;position:relative;overflow:hidden}
-.social-button::before,.email-button::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#f0c748 0%,#ffd700 100%);opacity:0;transition:opacity .4s}
-.social-button:hover::before,.email-button:hover::before{opacity:1}
-.social-button:hover,.email-button:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(212,175,55,.6)}
-.social-button span,.email-button span{position:relative;z-index:1}
-.cart-items{display:grid;gap:2.5rem;margin-bottom:4rem}
-.cart-item{display:flex;align-items:center;gap:2.5rem;padding:2.5rem;background:rgba(255,255,255,.04);border-radius:20px;border:2px solid rgba(212,175,55,.25);transition:all .5s}
-.cart-item:hover{transform:translateY(-8px);background:rgba(255,255,255,.08);box-shadow:0 20px 50px rgba(212,175,55,.3)}
-.cart-item-image{width:130px;height:160px;border-radius:15px;overflow:hidden;flex-shrink:0;box-shadow:0 4px 15px rgba(0,0,0,.3)}
-.cart-item-image img{width:100%;height:100%;object-fit:cover}
-.cart-item-details{flex:1}
-.cart-item-number{font-size:1.3rem;font-weight:bold;color:#d4af37;margin-bottom:.5rem}
-.cart-item-remove{background:rgba(255,255,255,.08);border:2px solid rgba(255,100,100,.3);color:#f0f0f0;padding:.7rem 1.5rem;border-radius:10px;cursor:pointer;transition:all .3s;font-weight:600}
-.cart-item-remove:hover{background:rgba(255,70,70,.2);border-color:rgba(255,70,70,.6);transform:scale(1.05)}
-.empty-cart{text-align:center;padding:5rem 2rem;color:#c0c0c0}
-.empty-cart p{font-size:1.3rem;margin-bottom:2.5rem}
-.order-form h3{color:#d4af37;margin-bottom:2.5rem;font-size:1.8rem;font-weight:400;letter-spacing:1.5px}
-.form-group{margin-bottom:2rem}
-.form-group label{display:block;margin-bottom:.7rem;color:#d4af37;font-weight:600;font-size:1.05rem}
-.form-group input,.form-group textarea{width:100%;padding:1.2rem;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);border-radius:12px;color:#f0f0f0;font-family:Georgia,serif;font-size:1rem;transition:all .3s}
-.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.4)}
-.form-group input:focus,.form-group textarea:focus{outline:none;border-color:#d4af37;background:rgba(255,255,255,.12);box-shadow:0 0 20px rgba(212,175,55,.2)}
-.selected-artworks{background:rgba(212,175,55,.12);padding:2rem;border-radius:15px;margin-top:1.5rem;border:2px solid rgba(212,175,55,.3)}
-.selected-artworks h4{color:#d4af37;margin-bottom:1.5rem;font-size:1.2rem;font-weight:600}
-.artwork-numbers{display:flex;flex-wrap:wrap;gap:.8rem}
-.artwork-number{background:linear-gradient(135deg,#d4af37,#f0c748);color:#1a1a1a;padding:.6rem 1.2rem;border-radius:25px;font-weight:800;font-size:.95rem;box-shadow:0 2px 8px rgba(0,0,0,.2)}
-.submit-button{background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a;border:none;padding:1.3rem 3rem;border-radius:12px;font-size:1.15rem;font-weight:700;cursor:pointer;transition:all .4s;width:100%;text-transform:uppercase;letter-spacing:2px;box-shadow:0 6px 20px rgba(212,175,55,.4);margin-top:1.5rem;position:relative;overflow:hidden}
-.submit-button::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#f0c748 0%,#ffd700 100%);opacity:0;transition:opacity .4s}
-.submit-button:hover::before{opacity:1}
-.submit-button:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(212,175,55,.6)}
-.submit-button span{position:relative;z-index:1}
-.success-message{text-align:center;padding:4rem;background:rgba(255,255,255,.04);border-radius:20px;border:2px solid rgba(212,175,55,.3)}
-.success-message h3{color:#d4af37;margin-bottom:1.5rem;font-size:2rem;font-weight:400}
-.success-message p{color:#e5e5e5;margin-bottom:2.5rem;font-size:1.2rem}
-.gallery-item.selected{border:3px solid #d4af37;box-shadow:0 0 40px rgba(212,175,55,.6)}
-.cart-indicator{display:flex;align-items:center;gap:10px;padding:10px 18px;background:rgba(212,175,55,.12);border-radius:25px;border:2px solid rgba(212,175,55,.3);transition:all .3s}
-.cart-indicator:hover{background:rgba(212,175,55,.2);border-color:rgba(212,175,55,.5);transform:scale(1.05)}
-.cart-count{background:linear-gradient(135deg,#d4af37,#f0c748);color:#1a1a1a;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;box-shadow:0 2px 8px rgba(0,0,0,.3)}
-.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.96);display:none;align-items:center;justify-content:center;z-index:2000;padding:20px;backdrop-filter:blur(10px)}
-.lightbox.open{display:flex;animation:fadeIn .4s}
-.lightbox-content{position:relative;max-width:90%;max-height:90%;display:flex;align-items:center;justify-content:center}
-.lightbox-img{max-width:100%;max-height:90vh;object-fit:contain;border-radius:12px;box-shadow:0 15px 50px rgba(0,0,0,.7)}
-.lightbox .close-btn{position:absolute;top:25px;right:25px;background:rgba(212,175,55,.15);border:2px solid rgba(212,175,55,.5);color:#d4af37;font-size:1.8rem;width:55px;height:55px;border-radius:50%;cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;z-index:2001;font-weight:bold}
-.lightbox .close-btn:hover{background:rgba(212,175,55,.3);border-color:#d4af37;transform:scale(1.15) rotate(90deg)}
-.lightbox .counter{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);color:#d4af37;font-size:1.2rem;background:rgba(0,0,0,.7);padding:.8rem 1.8rem;border-radius:50px;backdrop-filter:blur(10px);font-weight:700;border:2px solid rgba(212,175,55,.3)}
-.lightbox .nav{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
-.lightbox .nav button{pointer-events:auto;background:rgba(212,175,55,.15);border:2px solid rgba(212,175,55,.5);color:#d4af37;font-size:2.2rem;width:65px;height:65px;margin:0 1.5rem;border-radius:50%;cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);font-weight:bold;display:flex;align-items:center;justify-content:center}
-.lightbox .nav button:hover{background:rgba(212,175,55,.3);border-color:#d4af37;transform:scale(1.15)}
-body.lb-lock{overflow:hidden}
-.menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;padding:8px}
-.menu-toggle span{width:28px;height:3px;background:#d4af37;transition:.3s;border-radius:3px}
-.menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px)}
-.menu-toggle.active span:nth-child(2){opacity:0}
-.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
-@media(max-width:768px){
-.menu-toggle{display:flex}
-.nav-links{position:fixed;top:80px;left:0;width:100%;background:rgba(0,0,0,.97);flex-direction:column;padding:2.5rem;gap:1.5rem;transform:translateY(-100%);opacity:0;visibility:hidden;transition:all .5s;backdrop-filter:blur(25px);border-bottom:2px solid rgba(212,175,55,.3)}
-.nav-links.active{transform:translateY(0);opacity:1;visibility:visible}
-.language-item{margin-left:0;margin-top:1.5rem}
-.language-item .language-selector{min-width:100%}
-.home-content h1{font-size:2.8rem}
-.home-content p{font-size:1.2rem}
-.nav-links a{font-size:1.15rem;padding:15px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
-.logo{font-size:1.3rem;letter-spacing:1.5px}
-.section-title{font-size:2.5rem}
-.home-buttons{flex-direction:column;align-items:center;gap:1.5rem}
-.page-button{width:100%;max-width:320px;padding:18px 40px}
-.gallery{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
-.cart-item{flex-direction:column;text-align:center;gap:1.5rem;padding:2rem}
-.cart-item-image{width:100%;height:220px}
-.about-content,.contact-content,.purchase-info,.order-form{padding:2.5rem}
-.lightbox .nav button{font-size:1.8rem;width:55px;height:55px;margin:0 .8rem}
-.lightbox .close-btn{font-size:1.5rem;width:45px;height:45px;top:18px;right:18px}
-.lightbox .counter{font-size:1rem;bottom:18px;padding:.7rem 1.5rem}
-.cart-indicator{padding:8px 14px;font-size:.9rem}
-.action-btn{width:36px;height:36px;font-size:1.1rem}
-.gallery-actions{gap:10px}
-}
-::-webkit-scrollbar{width:10px}
-::-webkit-scrollbar-track{background:#1a1a1a}
-::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#d4af37,#f0c748);border-radius:5px}
-::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#f0c748,#ffd700)}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Feresteh Shahani - Realistische Kunstwerke mit Ölfarben & Acryl"/>
+  <title>Feresteh Shahani | Realistische Kunst</title>
+  <meta property="og:title" content="Feresteh Shahani – Realistische Kunst"/>
+  <meta property="og:description" content="Ölfarben & Acryl Kunst von Feresteh Shahani"/>
+  <meta property="og:type" content="website"/>
+  <meta name="theme-color" content="#1a1a1a"/>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Georgia,serif;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);color:#f0f0f0;line-height:1.6;min-height:100vh}
+    header{background:rgba(0,0,0,.92);padding:18px 0;position:fixed;width:100%;top:0;z-index:1000;backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,.15);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+    nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 30px}
+    .logo{font-size:26px;font-weight:bold;color:#d4af37;text-transform:uppercase;letter-spacing:2.5px;transition:all .3s;text-shadow:0 2px 8px rgba(212,175,55,.3);cursor:default}
+    .logo:hover{color:#f0c748;transform:scale(1.02)}
+    .nav-links{display:flex;gap:30px;list-style:none;align-items:center}
+    .nav-links a{color:#f0f0f0;text-decoration:none;font-size:14px;text-transform:uppercase;letter-spacing:1.2px;transition:all .3s;position:relative;padding:10px 0;font-weight:500}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:50%;width:0;height:2.5px;background:linear-gradient(90deg,#d4af37,#f0c748);transition:all .4s;transform:translateX(-50%);border-radius:2px}
+    .nav-links a:hover{color:#d4af37}
+    .nav-links a:hover::after{width:100%}
+    .language-selector{position:relative;background:rgba(255,255,255,.08);border-radius:10px;backdrop-filter:blur(12px);border:1.5px solid rgba(212,175,55,.25);transition:all .3s;overflow:hidden}
+    .language-selector:hover{background:rgba(255,255,255,.12);border-color:rgba(212,175,55,.5);transform:translateY(-2px)}
+    .language-selector select{padding:.8rem 2.5rem .8rem 1.2rem;font-size:.95rem;border:none;background:transparent;color:#f0f0f0;cursor:pointer;font-weight:500;font-family:Georgia,serif;width:100%;appearance:none}
+    .language-selector::after{content:'▼';position:absolute;right:1rem;top:50%;transform:translateY(-50%);font-size:.7rem;color:#d4af37;pointer-events:none}
+    .language-selector select option{background:#2d2d2d;color:#f0f0f0}
+    .page-container{display:none;min-height:100vh;padding-top:90px;animation:fadeIn .5s}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .page-container.active{display:block}
+    .home-page{min-height:calc(100vh - 90px);display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px;background:radial-gradient(circle at center,rgba(212,175,55,.1) 0%,transparent 70%)}
+    .home-content h1{font-size:4.5rem;margin-bottom:2rem;color:#d4af37;text-shadow:0 4px 20px rgba(212,175,55,.4);font-weight:300;letter-spacing:4px;animation:titleGlow 3s ease-in-out infinite}
+    @keyframes titleGlow{0%,100%{text-shadow:0 4px 20px rgba(212,175,55,.4)}50%{text-shadow:0 8px 30px rgba(212,175,55,.6)}}
+    .home-content p{font-size:1.5rem;margin-bottom:3rem;color:#c8c8c8;font-weight:300;letter-spacing:1.5px}
+    .home-buttons{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:3.5rem}
+    .page-button{display:inline-block;padding:20px 50px;background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;border-radius:10px;transition:all .4s;border:none;cursor:pointer;font-size:1rem;box-shadow:0 6px 20px rgba(212,175,55,.4);position:relative;overflow:hidden}
+    .page-button::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#f0c748 0%,#ffd700 100%);opacity:0;transition:opacity .4s}
+    .page-button:hover::before{opacity:1}
+    .page-button:hover{transform:translateY(-6px);box-shadow:0 12px 35px rgba(212,175,55,.6)}
+    .page-button span{position:relative;z-index:1}
+    .section-title{text-align:center;font-size:3.5rem;margin-bottom:5rem;color:#d4af37;position:relative;padding-bottom:2rem;font-weight:300;letter-spacing:3px}
+    .section-title::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:120px;height:4px;background:linear-gradient(90deg,transparent,#d4af37,transparent)}
+    .gallery-page,.purchase-page,.about-contact-page{max-width:1400px;margin:0 auto;padding:0 30px 60px}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2.5rem;margin-top:3rem}
+    .gallery-item{position:relative;overflow:hidden;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.5);transition:all .5s;background:rgba(255,255,255,.03);border:2px solid rgba(212,175,55,.2);aspect-ratio:4/5}
+    .gallery-item::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,175,55,.1),transparent);opacity:0;transition:opacity .5s;z-index:1}
+    .gallery-item:hover::before{opacity:1}
+    .gallery-item:hover{transform:translateY(-15px) scale(1.03);box-shadow:0 25px 50px rgba(212,175,55,.4);border-color:rgba(212,175,55,.5)}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s}
+    .gallery-item:hover img{transform:scale(1.1)}
+    .gallery-overlay{position:absolute;top:18px;right:18px;background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a;padding:.7rem 1.2rem;border-radius:50px;font-weight:800;font-size:.95rem;pointer-events:none;box-shadow:0 4px 15px rgba(0,0,0,.3);z-index:2}
+    .gallery-actions{position:absolute;top:18px;left:18px;display:flex;gap:12px;z-index:10}
+    .action-btn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;font-weight:bold;font-size:1.2rem;border:none;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+    .select-btn{background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a}
+    .select-btn:hover{transform:scale(1.15);box-shadow:0 6px 20px rgba(212,175,55,.6)}
+    .select-btn.selected{background:linear-gradient(135deg,#4CAF50,#45a049);color:white}
+    .zoom-btn{background:rgba(255,255,255,.95);color:#1a1a1a}
+    .zoom-btn:hover{transform:scale(1.15);background:white;box-shadow:0 6px 20px rgba(255,255,255,.4)}
+    .purchase-info,.about-content,.contact-content,.order-form{background:rgba(255,255,255,.04);padding:3.5rem;border-radius:20px;border:2px solid rgba(212,175,55,.25);transition:all .5s;backdrop-filter:blur(15px);text-align:center}
+    .purchase-info:hover,.about-content:hover,.contact-content:hover,.order-form:hover{transform:translateY(-10px);background:rgba(255,255,255,.08);box-shadow:0 20px 50px rgba(212,175,55,.3);border-color:rgba(212,175,55,.5)}
+    .purchase-info{max-width:900px;margin:5rem auto 0}
+    .purchase-info p{font-size:1.25rem;line-height:2;color:#e5e5e5;font-weight:300}
+    .purchase-info strong{color:#d4af37;font-weight:600;font-size:1.3rem}
+    .about-content,.contact-content{max-width:900px;margin:0 auto 5rem}
+    .about-content p,.contact-content p{color:#e5e5e5;font-size:1.25rem;line-height:2;font-weight:300}
+    .social-links{display:flex;gap:2rem;justify-content:center;margin-top:2.5rem;flex-wrap:wrap}
+    .social-button,.email-button{display:inline-flex;align-items:center;gap:.8rem;background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a!important;text-decoration:none;padding:16px 35px;border-radius:12px;font-weight:700;transition:all .4s;box-shadow:0 6px 20px rgba(212,175,55,.4);font-size:1.05rem;position:relative;overflow:hidden}
+    .social-button::before,.email-button::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#f0c748 0%,#ffd700 100%);opacity:0;transition:opacity .4s}
+    .social-button:hover::before,.email-button:hover::before{opacity:1}
+    .social-button:hover,.email-button:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(212,175,55,.6)}
+    .social-button span,.email-button span{position:relative;z-index:1}
+    .cart-items{display:grid;gap:2.5rem;margin-bottom:4rem}
+    .cart-item{display:flex;align-items:center;gap:2.5rem;padding:2.5rem;background:rgba(255,255,255,.04);border-radius:20px;border:2px solid rgba(212,175,55,.25);transition:all .5s}
+    .cart-item:hover{transform:translateY(-8px);background:rgba(255,255,255,.08);box-shadow:0 20px 50px rgba(212,175,55,.3)}
+    .cart-item-image{width:130px;height:160px;border-radius:15px;overflow:hidden;flex-shrink:0;box-shadow:0 4px 15px rgba(0,0,0,.3)}
+    .cart-item-image img{width:100%;height:100%;object-fit:cover}
+    .cart-item-details{flex:1}
+    .cart-item-number{font-size:1.3rem;font-weight:bold;color:#d4af37;margin-bottom:.5rem}
+    .cart-item-remove{background:rgba(255,255,255,.08);border:2px solid rgba(255,100,100,.3);color:#f0f0f0;padding:.7rem 1.5rem;border-radius:10px;cursor:pointer;transition:all .3s;font-weight:600}
+    .cart-item-remove:hover{background:rgba(255,70,70,.2);border-color:rgba(255,70,70,.6);transform:scale(1.05)}
+    .empty-cart{text-align:center;padding:5rem 2rem;color:#c0c0c0}
+    .empty-cart p{font-size:1.3rem;margin-bottom:2.5rem}
+    .order-form h3{color:#d4af37;margin-bottom:2.5rem;font-size:1.8rem;font-weight:400;letter-spacing:1.5px}
+    .form-group{margin-bottom:2rem}
+    .form-group label{display:block;margin-bottom:.7rem;color:#d4af37;font-weight:600;font-size:1.05rem}
+    .form-group input,.form-group textarea{width:100%;padding:1.2rem;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);border-radius:12px;color:#f0f0f0;font-family:Georgia,serif;font-size:1rem;transition:all .3s}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.4)}
+    .form-group input:focus,.form-group textarea:focus{outline:none;border-color:#d4af37;background:rgba(255,255,255,.12);box-shadow:0 0 20px rgba(212,175,55,.2)}
+    .selected-artworks{background:rgba(212,175,55,.12);padding:2rem;border-radius:15px;margin-top:1.5rem;border:2px solid rgba(212,175,55,.3)}
+    .selected-artworks h4{color:#d4af37;margin-bottom:1.5rem;font-size:1.2rem;font-weight:600}
+    .artwork-numbers{display:flex;flex-wrap:wrap;gap:.8rem}
+    .artwork-number{background:linear-gradient(135deg,#d4af37,#f0c748);color:#1a1a1a;padding:.6rem 1.2rem;border-radius:25px;font-weight:800;font-size:.95rem;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+    .submit-button{background:linear-gradient(135deg,#d4af37 0%,#f0c748 100%);color:#1a1a1a;border:none;padding:1.3rem 3rem;border-radius:12px;font-size:1.15rem;font-weight:700;cursor:pointer;transition:all .4s;width:100%;text-transform:uppercase;letter-spacing:2px;box-shadow:0 6px 20px rgba(212,175,55,.4);margin-top:1.5rem;position:relative;overflow:hidden}
+    .submit-button::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#f0c748 0%,#ffd700 100%);opacity:0;transition:opacity .4s}
+    .submit-button:hover::before{opacity:1}
+    .submit-button:hover{transform:translateY(-4px);box-shadow:0 12px 35px rgba(212,175,55,.6)}
+    .submit-button span{position:relative;z-index:1}
+    .success-message{text-align:center;padding:4rem;background:rgba(255,255,255,.04);border-radius:20px;border:2px solid rgba(212,175,55,.3)}
+    .success-message h3{color:#d4af37;margin-bottom:1.5rem;font-size:2rem;font-weight:400}
+    .success-message p{color:#e5e5e5;margin-bottom:2.5rem;font-size:1.2rem}
+    .gallery-item.selected{border:3px solid #d4af37;box-shadow:0 0 40px rgba(212,175,55,.6)}
+    .cart-indicator{display:flex;align-items:center;gap:10px;padding:10px 18px;background:rgba(212,175,55,.12);border-radius:25px;border:2px solid rgba(212,175,55,.3);transition:all .3s}
+    .cart-indicator:hover{background:rgba(212,175,55,.2);border-color:rgba(212,175,55,.5);transform:scale(1.05)}
+    .cart-count{background:linear-gradient(135deg,#d4af37,#f0c748);color:#1a1a1a;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+    .lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.96);display:none;align-items:center;justify-content:center;z-index:2000;padding:20px;backdrop-filter:blur(10px)}
+    .lightbox.open{display:flex;animation:fadeIn .4s}
+    .lightbox-content{position:relative;max-width:90%;max-height:90%;display:flex;align-items:center;justify-content:center}
+    .lightbox-img{max-width:100%;max-height:90vh;object-fit:contain;border-radius:12px;box-shadow:0 15px 50px rgba(0,0,0,.7)}
+    .lightbox .close-btn{position:absolute;top:25px;right:25px;background:rgba(212,175,55,.15);border:2px solid rgba(212,175,55,.5);color:#d4af37;font-size:1.8rem;width:55px;height:55px;border-radius:50%;cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;z-index:2001;font-weight:bold}
+    .lightbox .close-btn:hover{background:rgba(212,175,55,.3);border-color:#d4af37;transform:scale(1.15) rotate(90deg)}
+    .lightbox .counter{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);color:#d4af37;font-size:1.2rem;background:rgba(0,0,0,.7);padding:.8rem 1.8rem;border-radius:50px;backdrop-filter:blur(10px);font-weight:700;border:2px solid rgba(212,175,55,.3)}
+    .lightbox .nav{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+    .lightbox .nav button{pointer-events:auto;background:rgba(212,175,55,.15);border:2px solid rgba(212,175,55,.5);color:#d4af37;font-size:2.2rem;width:65px;height:65px;margin:0 1.5rem;border-radius:50%;cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);font-weight:bold;display:flex;align-items:center;justify-content:center}
+    .lightbox .nav button:hover{background:rgba(212,175,55,.3);border-color:#d4af37;transform:scale(1.15)}
+    body.lb-lock{overflow:hidden}
+    .menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;padding:8px}
+    .menu-toggle span{width:28px;height:3px;background:#d4af37;transition:.3s;border-radius:3px}
+    .menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px)}
+    .menu-toggle.active span:nth-child(2){opacity:0}
+    .menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}
+    @media(max-width:768px){
+      .menu-toggle{display:flex}
+      .nav-links{position:fixed;top:80px;left:0;width:100%;background:rgba(0,0,0,.97);flex-direction:column;padding:2.5rem;gap:1.5rem;transform:translateY(-100%);opacity:0;visibility:hidden;transition:all .5s;backdrop-filter:blur(25px);border-bottom:2px solid rgba(212,175,55,.3)}
+      .nav-links.active{transform:translateY(0);opacity:1;visibility:visible}
+      .language-item{margin-left:0;margin-top:1.5rem}
+      .language-item .language-selector{min-width:100%}
+      .home-content h1{font-size:2.8rem}
+      .home-content p{font-size:1.2rem}
+      .nav-links a{font-size:1.15rem;padding:15px 0;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
+      .logo{font-size:1.3rem;letter-spacing:1.5px}
+      .section-title{font-size:2.5rem}
+      .home-buttons{flex-direction:column;align-items:center;gap:1.5rem}
+      .page-button{width:100%;max-width:320px;padding:18px 40px}
+      .gallery{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem}
+      .cart-item{flex-direction:column;text-align:center;gap:1.5rem;padding:2rem}
+      .cart-item-image{width:100%;height:220px}
+      .about-content,.contact-content,.purchase-info,.order-form{padding:2.5rem}
+      .lightbox .nav button{font-size:1.8rem;width:55px;height:55px;margin:0 .8rem}
+      .lightbox .close-btn{font-size:1.5rem;width:45px;height:45px;top:18px;right:18px}
+      .lightbox .counter{font-size:1rem;bottom:18px;padding:.7rem 1.5rem}
+      .cart-indicator{padding:8px 14px;font-size:.9rem}
+      .action-btn{width:36px;height:36px;font-size:1.1rem}
+      .gallery-actions{gap:10px}
+    }
+    ::-webkit-scrollbar{width:10px}
+    ::-webkit-scrollbar-track{background:#1a1a1a}
+    ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#d4af37,#f0c748);border-radius:5px}
+    ::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#f0c748,#ffd700)}
+  </style>
 </head>
 <body>
-<header>
-<nav>
-<div class="logo" id="logoText">Feresteh Shahani</div>
-<div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
-<ul class="nav-links" id="navLinks">
-<li><a href="#" id="navHome" onclick="showPage('home')">Home</a></li>
-<li><a href="#" id="navGallery" onclick="showPage('gallery')">Galerie</a></li>
-<li><a href="#" id="navPurchase" onclick="showPage('purchase')"><div class="cart-indicator"><span>🛒</span><span class="cart-count" id="cartCount">0</span></div></a></li>
-<li><a href="#" id="navAbout" onclick="showPage('about-contact')">Über mich</a></li>
-<li class="language-item"><div class="language-selector"><select id="languageSelect" onchange="changeLanguage()"><option value="en">English</option><option value="de" selected>Deutsch</option><option value="fa">فارسی</option></select></div></li>
-</ul>
-</nav>
-</header>
+  <header>
+    <nav>
+      <div class="logo" id="logoText">Feresteh Shahani</div>
+      <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" id="navHome" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" id="navGallery" onclick="showPage('gallery')">Galerie</a></li>
+        <li><a href="#" id="navPurchase" onclick="showPage('purchase')"><div class="cart-indicator"><span>🛒</span><span class="cart-count" id="cartCount">0</span></div></a></li>
+        <li><a href="#" id="navAbout" onclick="showPage('about-contact')">Über mich</a></li>
+        <li class="language-item"><div class="language-selector"><select id="languageSelect" onchange="changeLanguage()"><option value="en">English</option><option value="de" selected>Deutsch</option><option value="fa">فارسی</option></select></div></li>
+      </ul>
+    </nav>
+  </header>
 
-<div id="home-page" class="page-container active">
-<section class="home-page">
-<div class="home-content">
-<h1 id="heroTitle">Feresteh Shahani</h1>
-<p id="heroSubtitle">Realistische Kunstwerke mit Kugelschreiber & Bleistift ✏️</p>
-<div class="home-buttons">
-<button class="page-button" onclick="showPage('gallery')"><span id="btnGallery">Galerie ansehen</span></button>
-<button class="page-button" onclick="showPage('about-contact')"><span id="btnAbout">Über mich</span></button>
-</div>
-</div>
-</section>
-</div>
+  <div id="home-page" class="page-container active">
+    <section class="home-page">
+      <div class="home-content">
+        <h1 id="heroTitle">Feresteh Shahani</h1>
+        <p id="heroSubtitle">Realistische Kunstwerke mit Ölfarben & Acryl 🎨</p>
+        <div class="home-buttons">
+          <button class="page-button" onclick="showPage('gallery')"><span id="btnGallery">Galerie ansehen</span></button>
+          <button class="page-button" onclick="showPage('about-contact')"><span id="btnAbout">Über mich</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
 
-<div id="gallery-page" class="page-container">
-<section class="gallery-page">
-<h2 class="section-title" id="galleryTitle">Meine Kunstwerke</h2>
-<div class="gallery">
-<!-- Gallery items 1-16 -->
-<div class="gallery-item" data-artwork="1">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(1,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(1)">🔍</button>
-</div>
-<img loading="lazy" src="1.jpg" alt="Kunstwerk 1">
-<div class="gallery-overlay"><span>1</span></div>
-</div>
-<div class="gallery-item" data-artwork="2">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(2,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(2)">🔍</button>
-</div>
-<img loading="lazy" src="2.jpg" alt="Kunstwerk 2">
-<div class="gallery-overlay"><span>2</span></div>
-</div>
-<div class="gallery-item" data-artwork="3">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(3,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(3)">🔍</button>
-</div>
-<img loading="lazy" src="3.jpg" alt="Kunstwerk 3">
-<div class="gallery-overlay"><span>3</span></div>
-</div>
-<div class="gallery-item" data-artwork="4">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(4,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(4)">🔍</button>
-</div>
-<img loading="lazy" src="4.jpg" alt="Kunstwerk 4">
-<div class="gallery-overlay"><span>4</span></div>
-</div>
-<div class="gallery-item" data-artwork="5">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(5,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(5)">🔍</button>
-</div>
-<img loading="lazy" src="5.jpg" alt="Kunstwerk 5">
-<div class="gallery-overlay"><span>5</span></div>
-</div>
-<div class="gallery-item" data-artwork="6">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(6,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(6)">🔍</button>
-</div>
-<img loading="lazy" src="6.jpg" alt="Kunstwerk 6">
-<div class="gallery-overlay"><span>6</span></div>
-</div>
-<div class="gallery-item" data-artwork="7">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(7,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(7)">🔍</button>
-</div>
-<img loading="lazy" src="7.jpg" alt="Kunstwerk 7">
-<div class="gallery-overlay"><span>7</span></div>
-</div>
-<div class="gallery-item" data-artwork="8">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(8,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(8)">🔍</button>
-</div>
-<img loading="lazy" src="8.jpg" alt="Kunstwerk 8">
-<div class="gallery-overlay"><span>8</span></div>
-</div>
-<div class="gallery-item" data-artwork="9">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(9,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(9)">🔍</button>
-</div>
-<img loading="lazy" src="9.jpg" alt="Kunstwerk 9">
-<div class="gallery-overlay"><span>9</span></div>
-</div>
-<div class="gallery-item" data-artwork="10">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(10,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(10)">🔍</button>
-</div>
-<img loading="lazy" src="10.jpg" alt="Kunstwerk 10">
-<div class="gallery-overlay"><span>10</span></div>
-</div>
-<div class="gallery-item" data-artwork="11">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(11,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(11)">🔍</button>
-</div>
-<img loading="lazy" src="11.jpg" alt="Kunstwerk 11">
-<div class="gallery-overlay"><span>11</span></div>
-</div>
-<div class="gallery-item" data-artwork="12">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(12,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(12)">🔍</button>
-</div>
-<img loading="lazy" src="12.jpg" alt="Kunstwerk 12">
-<div class="gallery-overlay"><span>12</span></div>
-</div>
-<div class="gallery-item" data-artwork="13">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(13,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(13)">🔍</button>
-</div>
-<img loading="lazy" src="13.jpg" alt="Kunstwerk 13">
-<div class="gallery-overlay"><span>13</span></div>
-</div>
-<div class="gallery-item" data-artwork="14">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(14,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(14)">🔍</button>
-</div>
-<img loading="lazy" src="14.jpg" alt="Kunstwerk 14">
-<div class="gallery-overlay"><span>14</span></div>
-</div>
-<div class="gallery-item" data-artwork="15">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(15,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(15)">🔍</button>
-</div>
-<img loading="lazy" src="15.jpg" alt="Kunstwerk 15">
-<div class="gallery-overlay"><span>15</span></div>
-</div>
-<div class="gallery-item" data-artwork="16">
-<div class="gallery-actions">
-<button class="action-btn select-btn" onclick="toggleArtworkSelection(16,this)">+</button>
-<button class="action-btn zoom-btn" onclick="openLightbox(16)">🔍</button>
-</div>
-<img loading="lazy" src="16.jpg" alt="Kunstwerk 16">
-<div class="gallery-overlay"><span>16</span></div>
-</div>
-</div>
+  <div id="gallery-page" class="page-container">
+    <section class="gallery-page">
+      <h2 class="section-title" id="galleryTitle">Meine Kunstwerke</h2>
+      <div class="gallery">
+        <!-- Gallery items 1-16 -->
+        <div class="gallery-item" data-artwork="1">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(1,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(1)">🔍</button>
+          </div>
+          <img loading="lazy" src="1.jpg" alt="Kunstwerk 1">
+          <div class="gallery-overlay"><span>1</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="2">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(2,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(2)">🔍</button>
+          </div>
+          <img loading="lazy" src="2.jpg" alt="Kunstwerk 2">
+          <div class="gallery-overlay"><span>2</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="3">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(3,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(3)">🔍</button>
+          </div>
+          <img loading="lazy" src="3.jpg" alt="Kunstwerk 3">
+          <div class="gallery-overlay"><span>3</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="4">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(4,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(4)">🔍</button>
+          </div>
+          <img loading="lazy" src="4.jpg" alt="Kunstwerk 4">
+          <div class="gallery-overlay"><span>4</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="5">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(5,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(5)">🔍</button>
+          </div>
+          <img loading="lazy" src="5.jpg" alt="Kunstwerk 5">
+          <div class="gallery-overlay"><span>5</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="6">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(6,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(6)">🔍</button>
+          </div>
+          <img loading="lazy" src="6.jpg" alt="Kunstwerk 6">
+          <div class="gallery-overlay"><span>6</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="7">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(7,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(7)">🔍</button>
+          </div>
+          <img loading="lazy" src="7.jpg" alt="Kunstwerk 7">
+          <div class="gallery-overlay"><span>7</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="8">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(8,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(8)">🔍</button>
+          </div>
+          <img loading="lazy" src="8.jpg" alt="Kunstwerk 8">
+          <div class="gallery-overlay"><span>8</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="9">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(9,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(9)">🔍</button>
+          </div>
+          <img loading="lazy" src="9.jpg" alt="Kunstwerk 9">
+          <div class="gallery-overlay"><span>9</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="10">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(10,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(10)">🔍</button>
+          </div>
+          <img loading="lazy" src="10.jpg" alt="Kunstwerk 10">
+          <div class="gallery-overlay"><span>10</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="11">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(11,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(11)">🔍</button>
+          </div>
+          <img loading="lazy" src="11.jpg" alt="Kunstwerk 11">
+          <div class="gallery-overlay"><span>11</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="12">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(12,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(12)">🔍</button>
+          </div>
+          <img loading="lazy" src="12.jpg" alt="Kunstwerk 12">
+          <div class="gallery-overlay"><span>12</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="13">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(13,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(13)">🔍</button>
+          </div>
+          <img loading="lazy" src="13.jpg" alt="Kunstwerk 13">
+          <div class="gallery-overlay"><span>13</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="14">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(14,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(14)">🔍</button>
+          </div>
+          <img loading="lazy" src="14.jpg" alt="Kunstwerk 14">
+          <div class="gallery-overlay"><span>14</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="15">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(15,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(15)">🔍</button>
+          </div>
+          <img loading="lazy" src="15.jpg" alt="Kunstwerk 15">
+          <div class="gallery-overlay"><span>15</span></div>
+        </div>
+        <div class="gallery-item" data-artwork="16">
+          <div class="gallery-actions">
+            <button class="action-btn select-btn" onclick="toggleArtworkSelection(16,this)">+</button>
+            <button class="action-btn zoom-btn" onclick="openLightbox(16)">🔍</button>
+          </div>
+          <img loading="lazy" src="16.jpg" alt="Kunstwerk 16">
+          <div class="gallery-overlay"><span>16</span></div>
+        </div>
+      </div>
 
-<div class="purchase-info">
-<p id="purchaseText">
-<strong id="purchaseStrong">Interessiert an einem Kunstwerk?</strong><br/>
-<span id="purchaseDescription">Verwenden Sie die + Schaltfläche, um Kunstwerke auszuwählen und fahren Sie dann mit dem Kauf fort, um Ihre Anfrage zu senden.</span>
-</p>
-</div>
-</section>
-</div>
+      <div class="purchase-info">
+        <p id="purchaseText">
+          <strong id="purchaseStrong">Interessiert an einem Kunstwerk?</strong><br/>
+          <span id="purchaseDescription">Verwenden Sie die + Schaltfläche, um Kunstwerke auszuwählen und fahren Sie dann mit dem Kauf fort, um Ihre Anfrage zu senden.</span>
+        </p>
+      </div>
+    </section>
+  </div>
 
-<div id="purchase-page" class="page-container">
-<section class="purchase-page">
-<h2 class="section-title" id="purchaseTitle">Kunstwerke Kaufen</h2>
-<div class="cart-items" id="cartItems">
-<!-- Cart items will be dynamically added here -->
-</div>
-<div class="order-form" id="orderForm">
-<h3>Bestellanfrage Formular</h3>
-<div class="form-group">
-<label for="firstName" id="firstNameLabel">Vorname *</label>
-<input type="text" id="firstName" required placeholder="Ihr Vorname">
-</div>
-<div class="form-group">
-<label for="lastName" id="lastNameLabel">Nachname *</label>
-<input type="text" id="lastName" required placeholder="Ihr Nachname">
-</div>
-<div class="form-group">
-<label for="email" id="emailLabel">E-Mail-Adresse *</label>
-<input type="email" id="email" required placeholder="Ihre E-Mail-Adresse">
-</div>
-<div class="form-group">
-<label for="message" id="messageLabel">Zusätzliche Nachricht</label>
-<textarea id="message" rows="4" placeholder="Zusätzliche Informationen oder Fragen..."></textarea>
-</div>
-<div class="selected-artworks">
-<h4>Ausgewählte Kunstwerke:</h4>
-<div class="artwork-numbers" id="selectedArtworksList">
-<!-- Selected artworks will be shown here -->
-</div>
-</div>
-<button class="submit-button" onclick="submitOrder()" id="submitButton">
-<span>Kaufanfrage Senden</span>
-</button>
-</div>
-<div class="success-message" id="successMessage" style="display:none">
-<h3>Vielen Dank für Ihr Interesse!</h3>
-<p>Ihre Kaufanfrage wurde an Feresteh gesendet. Sie erhalten in Kürze eine Bestätigungs-E-Mail.</p>
-<button class="page-button" onclick="showPage('home')">Zurück zur Startseite</button>
-</div>
-</section>
-</div>
-
-<div id="about-contact-page" class="page-container">
-<section class="about-contact-page">
-<h2 class="section-title" id="aboutTitle">Über mich</h2>
-<div class="about-content">
-<p id="aboutText">
-Willkommen in meiner Galerie! Ich bin Feresteh Shahani und erschaffe realistische Kunstwerke mit Kugelschreiber und Bleistift. Jedes Werk entsteht durch Geduld, Präzision und Leidenschaft für Details. Meine Inspiration finde ich in der Schönheit des Alltäglichen und der Komplexität menschlicher Ausdrucksformen.
-</p>
-</div>
-<h2 class="section-title" id="contactTitle">Kontakt</h2>
-<div class="contact-content">
-<p id="contactText">
-Interessiert an meinen Kunstwerken? Für Verkauf, Ausstellungen, Auftragsarbeiten oder Zusammenarbeit können Sie mich gerne kontaktieren. Ich freue mich von Ihnen zu hören!
-</p>
-<a href="mailto:fereshtehshahani2011@hotmail.com" class="email-button" id="emailButton">
-<span>fereshtehshahani2011@hotmail.com</span>
-</a>
-<div class="social-links">
-<a href="https://facebook.com/Fereshtehshahani" target="_blank" class="social-button">
-<span>Facebook</span>
-</a>
-<a href="https://instagram.com/ferestehshahani" target="_blank" class="social-button">
-<span>Instagram @ferestehshahani</span>
-</a>
-</div>
-</div>
-</section>
-</div>
-
-<div class="lightbox" id="lightbox">
-<button class="close-btn" id="lbClose">✕</button>
-<div class="nav">
-<button id="lbPrev">←</button>
-<button id="lbNext">→</button>
-</div>
-<div class="lightbox-content">
-<img class="lightbox-img" id="lbImg" src="" alt="Großansicht">
-</div>
-<div class="counter" id="lbCounter">1 / 16</div>
-</div>
-
-<script>
-// Shopping Cart Functionality
-let selectedArtworks = new Set();
-
-// Lightbox functionality
-let currentImageIndex = 0;
-const totalImages = 16;
-
-function openLightbox(imageIndex) {
-  currentImageIndex = imageIndex;
-  updateLightboxImage();
-  document.getElementById('lightbox').classList.add('open');
-  document.body.classList.add('lb-lock');
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.classList.remove('lb-lock');
-}
-
-function updateLightboxImage() {
- const imageMap = {
-  1: '1.jpg', 2: '2.jpg', 3: '3.jpg', 4: '4.jpg', 5: '5.jpg',
-  6: '6.jpg', 7: '7.jpg', 8: '8.jpg', 9: '9.jpg', 10: '10.jpg',
-  11: '11.jpg', 12: '12.jpg', 13: '13.jpg', 14: '14.jpg', 15: '15.jpg',
-  16: '16.jpg'
-};
-
-  
-  const imageSrc = imageMap[currentImageIndex] || '1.jpg';
-  document.getElementById('lbImg').src = imageSrc;
-  document.getElementById('lbCounter').textContent = `${currentImageIndex} / ${totalImages}`;
-}
-
-function nextImage() {
-  currentImageIndex = currentImageIndex >= totalImages ? 1 : currentImageIndex + 1;
-  updateLightboxImage();
-}
-
-function prevImage() {
-  currentImageIndex = currentImageIndex <= 1 ? totalImages : currentImageIndex - 1;
-  updateLightboxImage();
-}
-
-// Event listeners for lightbox
-document.getElementById('lbClose').addEventListener('click', closeLightbox);
-document.getElementById('lbNext').addEventListener('click', nextImage);
-document.getElementById('lbPrev').addEventListener('click', prevImage);
-
-// Close lightbox when clicking on the background
-document.getElementById('lightbox').addEventListener('click', function(e) {
-  if (e.target === this) {
-    closeLightbox();
-  }
-});
-
-// Keyboard navigation
-document.addEventListener('keydown', function(e) {
-  if (document.getElementById('lightbox').classList.contains('open')) {
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') nextImage();
-    if (e.key === 'ArrowLeft') prevImage();
-  }
-});
-
-// Translations
-const translations = {
-  en: {
-    logoText: 'Feresteh Shahani',
-    navHome: 'Home',
-    navGallery: 'Gallery',
-    navAbout: 'About Me',
-    heroTitle: 'Feresteh Shahani',
-    heroSubtitle: 'Realistic Artwork with Pen & Pencil ✏️',
-    galleryTitle: 'My Artworks',
-    aboutTitle: 'About Me',
-    aboutText: 'Welcome to my gallery! I am Feresteh Shahani and I create realistic artworks with pen and pencil. Each piece is created with patience, precision and passion for detail. I find my inspiration in the beauty of everyday life and the complexity of human expression.',
-    contactTitle: 'Contact',
-    contactText: 'Interested in my artwork? For purchase, exhibitions, commissions or collaborations, feel free to reach out to me. I\'d love to hear from you!',
-    emailButton: 'fereshtehshahani2011@hotmail.com',
-    purchaseStrong: 'Interested in purchasing an artwork?',
-    purchaseDescription: 'Use the + button to select artworks, then proceed to purchase to send your inquiry.',
-    purchaseTitle: 'Purchase Artworks',
-    selectedArtworks: 'Selected Artworks',
-    sendInquiry: 'Send Purchase Inquiry',
-    thankYou: 'Thank You for Your Interest!',
-    confirmationMessage: 'Your purchase inquiry has been sent to Feresteh. You will receive a confirmation email shortly.',
-    emptyCart: 'No artworks selected yet.',
-    selectFromGallery: 'Please select artworks from the gallery first.',
-    remove: 'Remove',
-    firstNameLabel: 'First Name *',
-    lastNameLabel: 'Last Name *',
-    emailLabel: 'Email Address *',
-    messageLabel: 'Additional Message',
-    btnGallery: 'View Gallery',
-    btnAbout: 'About Me'
-  },
-  de: {
-    logoText: 'Feresteh Shahani',
-    navHome: 'Home',
-    navGallery: 'Galerie',
-    navAbout: 'Über mich',
-    heroTitle: 'Feresteh Shahani',
-    heroSubtitle: 'Realistische Kunstwerke mit Kugelschreiber & Bleistift ✏️',
-    galleryTitle: 'Meine Kunstwerke',
-    aboutTitle: 'Über mich',
-    aboutText: 'Willkommen in meiner Galerie! Ich bin Feresteh Shahani und erschaffe realistische Kunstwerke mit Kugelschreiber und Bleistift. Jedes Werk entsteht durch Geduld, Präzision und Leidenschaft für Details. Meine Inspiration finde ich in der Schönheit des Alltäglichen und der Komplexität menschlicher Ausdrucksformen.',
-    contactTitle: 'Kontakt',
-    contactText: 'Interessiert an meinen Kunstwerken? Für Verkauf, Ausstellungen, Auftragsarbeiten oder Zusammenarbeit können Sie mich gerne kontaktieren. Ich freue mich von Ihnen zu hören!',
-    emailButton: 'fereshtehshahani2011@hotmail.com',
-    purchaseStrong: 'Interessiert an einem Kunstwerk?',
-    purchaseDescription: 'Verwenden Sie die + Schaltfläche, um Kunstwerke auszuwählen, und fahren Sie dann mit dem Kauf fort, um Ihre Anfrage zu senden.',
-    purchaseTitle: 'Kunstwerke Kaufen',
-    selectedArtworks: 'Ausgewählte Kunstwerke',
-    sendInquiry: 'Kaufanfrage Senden',
-    thankYou: 'Vielen Dank für Ihr Interesse!',
-    confirmationMessage: 'Ihre Kaufanfrage wurde an Feresteh gesendet. Sie erhalten in Kürze eine Bestätigungs-E-Mail.',
-    emptyCart: 'Noch keine Kunstwerke ausgewählt.',
-    selectFromGallery: 'Bitte wählen Sie zuerst Kunstwerke aus der Galerie aus.',
-    remove: 'Entfernen',
-    firstNameLabel: 'Vorname *',
-    lastNameLabel: 'Nachname *',
-    emailLabel: 'E-Mail-Adresse *',
-    messageLabel: 'Zusätzliche Nachricht',
-    btnGallery: 'Galerie ansehen',
-    btnAbout: 'Über mich'
-  },
-  fa: {
-    logoText: 'فرشته شاهی',
-    navHome: 'خانه',
-    navGallery: 'گالری',
-    navAbout: 'درباره من',
-    heroTitle: 'فرشته شاهی',
-    heroSubtitle: 'آثار هنری واقع‌گرایانه با خودکار و مداد ✏️',
-    galleryTitle: 'آثار هنری من',
-    aboutTitle: 'درباره من',
-    aboutText: 'من فرشته هستم به صفحه ی من خوش آمدید. عاشق نقاشی ام نقاشی های من تلفیق جهان پیرامونم با کمی چاشنی انتزاع و تخیل هستند که با تکنیک رنگ و روغن و گاهی اکریلیک خلق می‌شوند امیدوارم از دیدن آنها لذت ببرید.',
-    contactTitle: 'تماس',
-    contactText: 'به آثار هنری من علاقه‌مند هستید؟ برای خرید، نمایشگاه‌ها، سفارشات یا همکاری، می‌توانید با من تماس بگیرید. خوشحال می‌شوم پیام شما را دریافت کنم!',
-    emailButton: 'fereshtehshahani2011@hotmail.com',
-    purchaseStrong: 'علاقه‌مند به خرید یک اثر هنری هستید?',
-    purchaseDescription: 'از دکمه + برای انتخاب آثار هنری استفاده کنید، سپس برای ارسال درخواست خود به بخش خرید بروید.',
-    purchaseTitle: 'خرید آثار هنری',
-    selectedArtworks: 'آثار هنری انتخاب شده',
-    sendInquiry: 'ارسال درخواست خرید',
-    thankYou: 'از علاقه شما سپاسگزاریم!',
-    confirmationMessage: 'درخواست خرید شما به فرشته ارسال شد. به زودی ایمیل تأیید دریافت خواهید کرد.',
-    emptyCart: 'هنوز هیچ اثر هنری انتخاب نشده است.',
-    selectFromGallery: 'لطفاً ابتدا آثار هنری را از گالری انتخاب کنید.',
-    remove: 'حذف',
-    firstNameLabel: 'نام *',
-    lastNameLabel: 'نام خانوادگی *',
-    emailLabel: 'آدرس ایمیل *',
-    messageLabel: 'پیام اضافی',
-    btnGallery: 'مشاهده گالری',
-    btnAbout: 'درباره من'
-  }
-};
-
-function toggleArtworkSelection(artworkNumber, button) {
-  const item = document.querySelector(`[data-artwork="${artworkNumber}"]`);
-  
-  if (selectedArtworks.has(artworkNumber)) {
-    selectedArtworks.delete(artworkNumber);
-    item.classList.remove('selected');
-    button.classList.remove('selected');
-    button.textContent = '+';
-  } else {
-    selectedArtworks.add(artworkNumber);
-    item.classList.add('selected');
-    button.classList.add('selected');
-    button.textContent = '✓';
-  }
-  
-  updateCart();
-}
-
-function updateCart() {
-  const cartCount = document.getElementById('cartCount');
-  cartCount.textContent = selectedArtworks.size;
-  
-  updateCartPage();
-}
-
-function updateCartPage() {
-  const cartItemsContainer = document.getElementById('cartItems');
-  const selectedArtworksList = document.getElementById('selectedArtworksList');
-  
-  // Update selected artworks list
-  selectedArtworksList.innerHTML = '';
-  Array.from(selectedArtworks).forEach(artworkNumber => {
-    const numberElement = document.createElement('div');
-    numberElement.className = 'artwork-number';
-    numberElement.textContent = artworkNumber;
-    selectedArtworksList.appendChild(numberElement);
-  });
-  
-  // Update cart items
-  cartItemsContainer.innerHTML = '';
-  
-  if (selectedArtworks.size === 0) {
-    cartItemsContainer.innerHTML = `
-      <div class="empty-cart">
-        <p>${getTranslation('emptyCart')}</p>
-        <button class="page-button" onclick="showPage('gallery')">
-          ${getTranslation('selectFromGallery')}
+  <div id="purchase-page" class="page-container">
+    <section class="purchase-page">
+      <h2 class="section-title" id="purchaseTitle">Kunstwerke Kaufen</h2>
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      <div class="order-form" id="orderForm">
+        <h3>Bestellanfrage Formular</h3>
+        <div class="form-group">
+          <label for="firstName" id="firstNameLabel">Vorname *</label>
+          <input type="text" id="firstName" required placeholder="Ihr Vorname">
+        </div>
+        <div class="form-group">
+          <label for="lastName" id="lastNameLabel">Nachname *</label>
+          <input type="text" id="lastName" required placeholder="Ihr Nachname">
+        </div>
+        <div class="form-group">
+          <label for="email" id="emailLabel">E‑Mail-Adresse *</label>
+          <input type="email" id="email" required placeholder="Ihre E‑Mail-Adresse">
+        </div>
+        <div class="form-group">
+          <label for="message" id="messageLabel">Zusätzliche Nachricht</label>
+          <textarea id="message" rows="4" placeholder="Zusätzliche Informationen oder Fragen..."></textarea>
+        </div>
+        <div class="selected-artworks">
+          <h4>Ausgewählte Kunstwerke:</h4>
+          <div class="artwork-numbers" id="selectedArtworksList">
+            <!-- Selected artworks will be shown here -->
+          </div>
+        </div>
+        <button class="submit-button" onclick="submitOrder()" id="submitButton">
+          <span>Kaufanfrage Senden</span>
         </button>
       </div>
-    `;
-  } else {
-    Array.from(selectedArtworks).forEach(artworkNumber => {
-      const cartItem = document.createElement('div');
-      cartItem.className = 'cart-item';
-      cartItem.innerHTML = `
-        <div class="cart-item-image">
-          <img src="${getArtworkImage(artworkNumber)}" alt="Artwork ${artworkNumber}">
+      <div class="success-message" id="successMessage" style="display:none">
+        <h3>Vielen Dank für Ihr Interesse!</h3>
+        <p>Ihre Kaufanfrage wurde an Feresteh gesendet. Sie erhalten in Kürze eine Bestätigungs‑E‑Mail.</p>
+        <button class="page-button" onclick="showPage('home')">Zurück zur Startseite</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="about-contact-page" class="page-container">
+    <section class="about-contact-page">
+      <h2 class="section-title" id="aboutTitle">Über mich</h2>
+      <div class="about-content">
+        <p id="aboutText">
+          من فرشته هستم به صفحه ی من خوش آمدید. عاشق نقاشی ام نقاشی های من تلفیق جهان پیرامونم با کمی چاشنی انتزاع و تخیل هستند که با تکنیک رنگ و روغن و گاهی اکریلیک خلق می‌شوند امیدوارم از دیدن آنها لذت ببرید.
+        </p>
+      </div>
+      <h2 class="section-title" id="contactTitle">Kontakt</h2>
+      <div class="contact-content">
+        <p id="contactText">
+          Interessiert an meinen Kunstwerken? Für Verkauf, Ausstellungen, Auftragsarbeiten oder Zusammenarbeit können Sie mich gerne kontaktieren. Ich freue mich von Ihnen zu hören!
+        </p>
+        <a href="mailto:fereshtehshahani2011@hotmail.com" class="email-button" id="emailButton">
+          <span>fereshtehshahani2011@hotmail.com</span>
+        </a>
+        <div class="social-links">
+          <a href="https://facebook.com/Fereshtehshahani" target="_blank" class="social-button">
+            <span>Facebook</span>
+          </a>
+          <a href="https://instagram.com/ferestehshahani" target="_blank" class="social-button">
+            <span>Instagram @ferestehshahani</span>
+          </a>
         </div>
-        <div class="cart-item-details">
-          <div class="cart-item-number">Kunstwerk #${artworkNumber}</div>
-          <p>Realistische Kugelschreiber- und Bleistiftzeichnung</p>
-        </div>
-        <button class="cart-item-remove" onclick="removeFromCart(${artworkNumber})">
-          ${getTranslation('remove')}
-        </button>
-      `;
-      cartItemsContainer.appendChild(cartItem);
+      </div>
+    </section>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <button class="close-btn" id="lbClose">✕</button>
+    <div class="nav">
+      <button id="lbPrev">←</button>
+      <button id="lbNext">→</button>
+    </div>
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lbImg" src="" alt="Großansicht">
+    </div>
+    <div class="counter" id="lbCounter">1 / 16</div>
+  </div>
+
+  <script>
+    // Shopping Cart Functionality
+    let selectedArtworks = new Set();
+
+    // Lightbox functionality
+    let currentImageIndex = 0;
+    const totalImages = 16;
+
+    function openLightbox(imageIndex) {
+      currentImageIndex = imageIndex;
+      updateLightboxImage();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.classList.add('lb-lock');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.classList.remove('lb-lock');
+    }
+
+    function updateLightboxImage() {
+      const imageMap = {
+        1:'1.jpg', 2:'2.jpg', 3:'3.jpg', 4:'4.jpg', 5:'5.jpg',
+        6:'6.jpg', 7:'7.jpg', 8:'8.jpg', 9:'9.jpg', 10:'10.jpg',
+        11:'11.jpg', 12:'12.jpg', 13:'13.jpg', 14:'14.jpg', 15:'15.jpg',
+        16:'16.jpg'
+      };
+      const imageSrc = imageMap[currentImageIndex] || '1.jpg';
+      document.getElementById('lbImg').src = imageSrc;
+      document.getElementById('lbCounter').textContent = `${currentImageIndex} / ${totalImages}`;
+    }
+
+    function nextImage() {
+      currentImageIndex = currentImageIndex >= totalImages ? 1 : currentImageIndex + 1;
+      updateLightboxImage();
+    }
+
+    function prevImage() {
+      currentImageIndex = currentImageIndex <= 1 ? totalImages : currentImageIndex - 1;
+      updateLightboxImage();
+    }
+
+    // Event listeners for lightbox
+    document.getElementById('lbClose').addEventListener('click', closeLightbox);
+    document.getElementById('lbNext').addEventListener('click', nextImage);
+    document.getElementById('lbPrev').addEventListener('click', prevImage);
+
+    // Close lightbox when clicking on the background
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeLightbox();
+      }
     });
-  }
-}
 
-function removeFromCart(artworkNumber) {
-  selectedArtworks.delete(artworkNumber);
-  const item = document.querySelector(`[data-artwork="${artworkNumber}"]`);
-  const button = item.querySelector('.select-btn');
-  if (item) {
-    item.classList.remove('selected');
-    button.classList.remove('selected');
-    button.textContent = '+';
-  }
-  updateCart();
-}
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (document.getElementById('lightbox').classList.contains('open')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      }
+    });
 
-function getArtworkImage(artworkNumber) {
-  const imageMap = {
-  1: '1.jpg', 2: '2.jpg', 3: '3.jpg', 4: '4.jpg', 5: '5.jpg',
-  6: '6.jpg', 7: '7.jpg', 8: '8.jpg', 9: '9.jpg', 10: '10.jpg',
-  11: '11.jpg', 12: '12.jpg', 13: '13.jpg', 14: '14.jpg', 15: '15.jpg',
-  16: '16.jpg'
-};
+    // Translations
+    const translations = {
+      en: {
+        logoText: 'Feresteh Shahani',
+        navHome: 'Home',
+        navGallery: 'Gallery',
+        navAbout: 'About Me',
+        heroTitle: 'Feresteh Shahani',
+        heroSubtitle: 'Realistic Artwork with Oil & Acrylic 🎨',
+        galleryTitle: 'My Artworks',
+        aboutTitle: 'About Me',
+        aboutText: 'Welcome to my gallery! I am Feresteh Shahani and I create realistic artworks with oil and acrylic paints. Each piece is created with patience, precision and passion for detail. I find my inspiration in the beauty of everyday life and the complexity of human expression.',
+        contactTitle: 'Contact',
+        contactText: 'Interested in my artwork? For purchase, exhibitions, commissions or collaborations, feel free to reach out to me. I\'d love to hear from you!',
+        emailButton: 'fereshtehshahani2011@hotmail.com',
+        purchaseStrong: 'Interested in purchasing an artwork?',
+        purchaseDescription: 'Use the + button to select artworks, then proceed to purchase to send your inquiry.',
+        purchaseTitle: 'Purchase Artworks',
+        selectedArtworks: 'Selected Artworks',
+        sendInquiry: 'Send Purchase Inquiry',
+        thankYou: 'Thank You for Your Interest!',
+        confirmationMessage: 'Your purchase inquiry has been sent to Feresteh. You will receive a confirmation email shortly.',
+        emptyCart: 'No artworks selected yet.',
+        selectFromGallery: 'Please select artworks from the gallery first.',
+        remove: 'Remove',
+        firstNameLabel: 'First Name *',
+        lastNameLabel: 'Last Name *',
+        emailLabel: 'Email Address *',
+        messageLabel: 'Additional Message',
+        btnGallery: 'View Gallery',
+        btnAbout: 'About Me'
+      },
+      de: {
+        logoText: 'Feresteh Shahani',
+        navHome: 'Home',
+        navGallery: 'Galerie',
+        navAbout: 'Über mich',
+        heroTitle: 'Feresteh Shahani',
+        heroSubtitle: 'Realistische Kunstwerke mit Ölfarben & Acryl 🎨',
+        galleryTitle: 'Meine Kunstwerke',
+        aboutTitle: 'Über mich',
+        aboutText: 'Willkommen in meiner Galerie! Ich bin Feresteh Shahani und erschaffe realistische Kunstwerke mit Ölfarben und Acryl. Jedes Werk entsteht durch Geduld, Präzision und Leidenschaft für Details. Meine Inspiration finde ich in der Schönheit des Alltäglichen und der Komplexität menschlicher Ausdrucksformen.',
+        contactTitle: 'Kontakt',
+        contactText: 'Interessiert an meinen Kunstwerken? Für Verkauf, Ausstellungen, Auftragsarbeiten oder Zusammenarbeit können Sie mich gerne kontaktieren. Ich freue mich von Ihnen zu hören!',
+        emailButton: 'fereshtehshahani2011@hotmail.com',
+        purchaseStrong: 'Interessiert an einem Kunstwerk?',
+        purchaseDescription: 'Verwenden Sie die + Schaltfläche, um Kunstwerke auszuwählen, und fahren Sie dann mit dem Kauf fort, um Ihre Anfrage zu senden.',
+        purchaseTitle: 'Kunstwerke Kaufen',
+        selectedArtworks: 'Ausgewählte Kunstwerke',
+        sendInquiry: 'Kaufanfrage Senden',
+        thankYou: 'Vielen Dank für Ihr Interesse!',
+        confirmationMessage: 'Ihre Kaufanfrage wurde an Feresteh gesendet. Sie erhalten in Kürze eine Bestätigungs‑E‑Mail.',
+        emptyCart: 'Noch keine Kunstwerke ausgewählt.',
+        selectFromGallery: 'Bitte wählen Sie zuerst Kunstwerke aus der Galerie aus.',
+        remove: 'Entfernen',
+        firstNameLabel: 'Vorname *',
+        lastNameLabel: 'Nachname *',
+        emailLabel: 'E‑Mail‑Adresse *',
+        messageLabel: 'Zusätzliche Nachricht',
+        btnGallery: 'Galerie ansehen',
+        btnAbout: 'Über mich'
+      },
+      fa: {
+        logoText: 'فرشته شاهی',
+        navHome: 'خانه',
+        navGallery: 'گالری',
+        navAbout: 'درباره من',
+        heroTitle: 'فرشته شاهی',
+        heroSubtitle: 'آثار هنری واقع‌گرایانه با رنگ روغن و آکریلیک 🎨',
+        galleryTitle: 'آثار هنری من',
+        aboutTitle: 'درباره من',
+        aboutText: 'من فرشته هستم به صفحه ی من خوش آمدید. عاشق نقاشی ام نقاشی های من تلفیق جهان پیرامونم با کمی چاشنی انتزاع و تخیل هستند که با تکنیک رنگ و روغن و گاهی اکریلیک خلق می‌شوند امیدوارم از دیدن آنها لذت ببرید.',
+        contactTitle: 'تماس',
+        contactText: 'به آثار هنری من علاقه‌مند هستید؟ برای خرید، نمایشگاه‌ها، سفارشات یا همکاری، می‌توانید با من تماس بگیرید. خوشحال می‌شوم پیام شما را دریافت کنم!',
+        emailButton: 'fereshtehshahani2011@hotmail.com',
+        purchaseStrong: 'علاقه‌مند به خرید یک اثر هنری هستید?',
+        purchaseDescription: 'از دکمه + برای انتخاب آثار هنری استفاده کنید، سپس برای ارسال درخواست خود به بخش خرید بروید.',
+        purchaseTitle: 'خرید آثار هنری',
+        selectedArtworks: 'آثار هنری انتخاب شده',
+        sendInquiry: 'ارسال درخواست خرید',
+        thankYou: 'از علاقه شما سپاسگزاریم!',
+        confirmationMessage: 'درخواست خرید شما به فرشته ارسال شد. به زودی ایمیل تأیید دریافت خواهید کرد.',
+        emptyCart: 'هنوز هیچ اثر هنری انتخاب نشده است.',
+        selectFromGallery: 'لطفاً ابتدا آثار هنری را از گالری انتخاب کنید.',
+        remove: 'حذف',
+        firstNameLabel: 'نام *',
+        lastNameLabel: 'نام خانوادگی *',
+        emailLabel: 'آدرس ایمیل *',
+        messageLabel: 'پیام اضافی',
+        btnGallery: 'مشاهده گالری',
+        btnAbout: 'درباره من'
+      }
+    };
 
-  return imageMap[artworkNumber] || '1.jpg';
-}
+    function toggleArtworkSelection(artworkNumber, button) {
+      const item = document.querySelector(`[data-artwork="${artworkNumber}"]`);
+      if (selectedArtworks.has(artworkNumber)) {
+        selectedArtworks.delete(artworkNumber);
+        item.classList.remove('selected');
+        button.classList.remove('selected');
+        button.textContent = '+';
+      } else {
+        selectedArtworks.add(artworkNumber);
+        item.classList.add('selected');
+        button.classList.add('selected');
+        button.textContent = '✓';
+      }
+      updateCart();
+    }
 
-function submitOrder() {
-  const firstName = document.getElementById('firstName').value;
-  const lastName = document.getElementById('lastName').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-  
-  if (!firstName || !lastName || !email) {
-    alert('Bitte füllen Sie alle erforderlichen Felder aus.');
-    return;
-  }
-  
-  if (selectedArtworks.size === 0) {
-    alert('Bitte wählen Sie mindestens ein Kunstwerk aus.');
-    return;
-  }
-  
-  const artworkList = Array.from(selectedArtworks).join(', ');
-  
-  // FormSubmit.co verwenden
-  const form = document.createElement('form');
-  form.method = 'POST';
-  form.action = 'https://formsubmit.co/fereshtehshahani2011@hotmail.com';
-  
-  // FormSubmit Konfiguration
-  const fields = {
-    '_subject': `Kunst Kaufanfrage - ${firstName} ${lastName}`,
-    '_captcha': 'false',
-    '_template': 'table',
-    'Name': `${firstName} ${lastName}`,
-    'Email': email,
-    'Ausgewählte Kunstwerke': artworkList,
-    'Nachricht': message || 'Keine zusätzliche Nachricht'
-  };
-  
-  Object.entries(fields).forEach(([key, value]) => {
-    const input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = key;
-    input.value = value;
-    form.appendChild(input);
-  });
-  
-  document.body.appendChild(form);
-  form.submit();
-}
+    function updateCart() {
+      const cartCount = document.getElementById('cartCount');
+      cartCount.textContent = selectedArtworks.size;
+      updateCartPage();
+    }
 
-function getTranslation(key) {
-  const lang = document.getElementById('languageSelect').value;
-  return translations[lang][key] || key;
-}
+    function updateCartPage() {
+      const cartItemsContainer = document.getElementById('cartItems');
+      const selectedArtworksList = document.getElementById('selectedArtworksList');
+      selectedArtworksList.innerHTML = '';
+      Array.from(selectedArtworks).forEach(artworkNumber => {
+        const numberElement = document.createElement('div');
+        numberElement.className = 'artwork-number';
+        numberElement.textContent = artworkNumber;
+        selectedArtworksList.appendChild(numberElement);
+      });
+      cartItemsContainer.innerHTML = '';
+      if (selectedArtworks.size === 0) {
+        cartItemsContainer.innerHTML = `
+          <div class="empty-cart">
+            <p>${getTranslation('emptyCart')}</p>
+            <button class="page-button" onclick="showPage('gallery')">
+              ${getTranslation('selectFromGallery')}
+            </button>
+          </div>
+        `;
+      } else {
+        Array.from(selectedArtworks).forEach(artworkNumber => {
+          const cartItem = document.createElement('div');
+          cartItem.className = 'cart-item';
+          cartItem.innerHTML = `
+            <div class="cart-item-image">
+              <img src="${getArtworkImage(artworkNumber)}" alt="Artwork ${artworkNumber}">
+            </div>
+            <div class="cart-item-details">
+              <div class="cart-item-number">Kunstwerk #${artworkNumber}</div>
+              <p>Realistische Kunstwerke mit Ölfarben & Acryl</p>
+            </div>
+            <button class="cart-item-remove" onclick="removeFromCart(${artworkNumber})">
+              ${getTranslation('remove')}
+            </button>
+          `;
+          cartItemsContainer.appendChild(cartItem);
+        });
+      }
+    }
 
-function changeLanguage() {
-  const lang = document.getElementById('languageSelect').value;
-  const t = translations[lang];
-  
-  // Update all translations
-  document.getElementById('logoText').textContent = t.logoText;
-  document.getElementById('navHome').textContent = t.navHome;
-  document.getElementById('navGallery').textContent = t.navGallery;
-  document.getElementById('navAbout').textContent = t.navAbout;
-  document.getElementById('heroTitle').textContent = t.heroTitle;
-  document.getElementById('heroSubtitle').textContent = t.heroSubtitle;
-  document.getElementById('galleryTitle').textContent = t.galleryTitle;
-  document.getElementById('aboutTitle').textContent = t.aboutTitle;
-  document.getElementById('aboutText').textContent = t.aboutText;
-  document.getElementById('contactTitle').textContent = t.contactTitle;
-  document.getElementById('contactText').textContent = t.contactText;
-  document.getElementById('emailButton').textContent = t.emailButton;
-  document.getElementById('purchaseStrong').textContent = t.purchaseStrong;
-  document.getElementById('purchaseDescription').textContent = t.purchaseDescription;
-  document.getElementById('btnGallery').textContent = t.btnGallery;
-  document.getElementById('btnAbout').textContent = t.btnAbout;
-  
-  // Update purchase page translations
-  const purchaseTitle = document.getElementById('purchaseTitle');
-  const submitButton = document.getElementById('submitButton');
-  const successMessage = document.getElementById('successMessage');
-  const firstNameLabel = document.getElementById('firstNameLabel');
-  const lastNameLabel = document.getElementById('lastNameLabel');
-  const emailLabel = document.getElementById('emailLabel');
-  const messageLabel = document.getElementById('messageLabel');
-  
-  if (purchaseTitle) purchaseTitle.textContent = t.purchaseTitle;
-  if (submitButton) submitButton.querySelector('span').textContent = t.sendInquiry;
-  if (successMessage) {
-    successMessage.querySelector('h3').textContent = t.thankYou;
-    successMessage.querySelector('p').textContent = t.confirmationMessage;
-  }
-  if (firstNameLabel) firstNameLabel.textContent = t.firstNameLabel;
-  if (lastNameLabel) lastNameLabel.textContent = t.lastNameLabel;
-  if (emailLabel) emailLabel.textContent = t.emailLabel;
-  if (messageLabel) messageLabel.textContent = t.messageLabel;
-  
-  document.body.style.direction = lang === 'fa' ? 'rtl' : 'ltr';
-  document.documentElement.lang = lang;
-  
-  // Update cart page content
-  updateCartPage();
-}
+    function removeFromCart(artworkNumber) {
+      selectedArtworks.delete(artworkNumber);
+      const item = document.querySelector(`[data-artwork="${artworkNumber}"]`);
+      const button = item.querySelector('.select-btn');
+      if (item) {
+        item.classList.remove('selected');
+        button.classList.remove('selected');
+        button.textContent = '+';
+      }
+      updateCart();
+    }
 
-function showPage(pageId) {
-  document.querySelectorAll('.page-container').forEach(page => {
-    page.classList.remove('active');
-  });
-  
-  document.getElementById(`${pageId}-page`).classList.add('active');
-  
-  navLinks.classList.remove('active');
-  menuToggle.classList.remove('active');
-  
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  
-  // Update cart when showing purchase page
-  if (pageId === 'purchase') {
-    updateCartPage();
-  }
-}
+    function getArtworkImage(artworkNumber) {
+      const imageMap = {
+        1:'1.jpg', 2:'2.jpg', 3:'3.jpg', 4:'4.jpg', 5:'5.jpg',
+        6:'6.jpg', 7:'7.jpg', 8:'8.jpg', 9:'9.jpg', 10:'10.jpg',
+        11:'11.jpg', 12:'12.jpg', 13:'13.jpg', 14:'14.jpg', 15:'15.jpg',
+        16:'16.jpg'
+      };
+      return imageMap[artworkNumber] || '1.jpg';
+    }
 
-// Initialize the page
-document.addEventListener('DOMContentLoaded', function() {
-  updateCart();
-});
+    function submitOrder() {
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      if (!firstName || !lastName || !email) {
+        alert('Bitte füllen Sie alle erforderlichen Felder aus.');
+        return;
+      }
+      if (selectedArtworks.size === 0) {
+        alert('Bitte wählen Sie mindestens ein Kunstwerk aus.');
+        return;
+      }
+      const artworkList = Array.from(selectedArtworks).join(', ');
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://formsubmit.co/fereshtehshahani2011@hotmail.com';
+      const fields = {
+        '_subject': `Kunst Kaufanfrage - ${firstName} ${lastName}`,
+        '_captcha': 'false',
+        '_template': 'table',
+        'Name': `${firstName} ${lastName}`,
+        'Email': email,
+        'Ausgewählte Kunstwerke': artworkList,
+        'Nachricht': message || 'Keine zusätzliche Nachricht'
+      };
+      Object.entries(fields).forEach(([key, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = key;
+        input.value = value;
+        form.appendChild(input);
+      });
+      document.body.appendChild(form);
+      form.submit();
+    }
 
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
+    function getTranslation(key) {
+      const lang = document.getElementById('languageSelect').value;
+      return translations[lang][key] || key;
+    }
 
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  menuToggle.classList.toggle('active');
-});
+    function changeLanguage() {
+      const lang = document.getElementById('languageSelect').value;
+      const t = translations[lang];
+      document.getElementById('logoText').textContent = t.logoText;
+      document.getElementById('navHome').textContent = t.navHome;
+      document.getElementById('navGallery').textContent = t.navGallery;
+      document.getElementById('navAbout').textContent = t.navAbout;
+      document.getElementById('heroTitle').textContent = t.heroTitle;
+      document.getElementById('heroSubtitle').textContent = t.heroSubtitle;
+      document.getElementById('galleryTitle').textContent = t.galleryTitle;
+      document.getElementById('aboutTitle').textContent = t.aboutTitle;
+      document.getElementById('aboutText').textContent = t.aboutText;
+      document.getElementById('contactTitle').textContent = t.contactTitle;
+      document.getElementById('contactText').textContent = t.contactText;
+      document.getElementById('emailButton').textContent = t.emailButton;
+      document.getElementById('purchaseStrong').textContent = t.purchaseStrong;
+      document.getElementById('purchaseDescription').textContent = t.purchaseDescription;
+      document.getElementById('btnGallery').textContent = t.btnGallery;
+      document.getElementById('btnAbout').textContent = t.btnAbout;
+      const purchaseTitle = document.getElementById('purchaseTitle');
+      const submitButton = document.getElementById('submitButton');
+      const successMessage = document.getElementById('successMessage');
+      const firstNameLabel = document.getElementById('firstNameLabel');
+      const lastNameLabel = document.getElementById('lastNameLabel');
+      const emailLabel = document.getElementById('emailLabel');
+      const messageLabel = document.getElementById('messageLabel');
+      if (purchaseTitle) purchaseTitle.textContent = t.purchaseTitle;
+      if (submitButton) submitButton.querySelector('span').textContent = t.sendInquiry;
+      if (successMessage) {
+        successMessage.querySelector('h3').textContent = t.thankYou;
+        successMessage.querySelector('p').textContent = t.confirmationMessage;
+      }
+      if (firstNameLabel) firstNameLabel.textContent = t.firstNameLabel;
+      if (lastNameLabel) lastNameLabel.textContent = t.lastNameLabel;
+      if (emailLabel) emailLabel.textContent = t.emailLabel;
+      if (messageLabel) messageLabel.textContent = t.messageLabel;
+      document.body.style.direction = lang === 'fa' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+      updateCartPage();
+    }
 
-// Close mobile menu when clicking on links
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
-    menuToggle.classList.remove('active');
-  });
-});
-</script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page-container').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(`${pageId}-page`).classList.add('active');
+      navLinks.classList.remove('active');
+      menuToggle.classList.remove('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (pageId === 'purchase') {
+        updateCartPage();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCart();
+    });
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
